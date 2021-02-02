@@ -2,12 +2,17 @@
 The Final Fits package is a series of scripts which are used to run the final stages of the CMS Hgg analysis: signal modelling, background modelling, datacard creation and final statistical interpretation and final result plots.
 
 ## Pdf model adpated with turnon fit
+
 [x] Bernstein 
+
 [x] Power law
+
 [x] Laurent
+
 [ ] Exponential
 
 -> Power law and Laurent series are done by discrete convolution
+
 -> the exponential can use analytic way
 
 
