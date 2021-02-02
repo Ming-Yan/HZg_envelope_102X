@@ -76,3 +76,4 @@ The modes are used for the following (run in sequential order):
   * `combine`  - compile the RooWorkspace from the .txt datacard. Run the fit in combine. Input options are specified in `Plots/FinalResults/combineHarvesterOptions_Template.dat`
   * `combinePlots` - create plots from finished combine jobs. Options are specified in `Plots/FinalResults/combinePlotsOptions_Template.dat`
 
+JAMES TEST
