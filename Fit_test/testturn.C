@@ -111,7 +111,39 @@ void testturn()
   RooFFTConvPdf gauxpow1("gauxpow1","gauxpow1",mH,step_pow1,gau_pow1);
   RooFFTConvPdf gauxpow3("gauxpow3","gauxpow3",mH,step_pow3,gau_pow3);
   RooFFTConvPdf gauxpow5("gauxpow5","gauxpow5",mH,step_pow5,gau_pow5);
+  
+  //testing with generic Laurent
+  RooRealVar mean_lau1("mean_lau1","mean_lau1",0);
+  RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",2,0.0001,20);
+  RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",105,80,120);
+  RooRealVar mean_lau2("mean_lau2","mean_lau2",0);
+  RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",2,0.0001,20);
+  RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",105,80,120);
+  RooRealVar mean_lau3("mean_lau3","mean_lau3",0);
+  RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",2,0.0001,20);
+  RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",105,80,120);
+  
+  RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",0.25,0,1.);
+  RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",0.25,0,1.);
+  RooRealVar cl1_lau2("cl1_lau2","cl1_lau2",0.25,0.,1.);
+  RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",0.25,0.,1.);
+  RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",0.25/2.,0,1.);
+  RooRealVar cl1_lau3("cl1_lau3","cl1_lau3",0.25,0.,1.);
+  RooRealVar cl2_lau3("cl2_lau3","cl2_lau3",0.25,0.,1.);
+  RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",0.25/2.,0,1.);
+  RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",0.25/3.,0,1.);
+  RooGenericPdf step_lau1("step_lau1", "step_lau1", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5))", RooArgList(mH,turnon_lau1,cl1_lau1,cl2_lau1));//step*(ax^b)
+  RooGenericPdf step_lau2("step_lau2", "step_lau2", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5)+@4*(@0)^(-3))", RooArgList(mH,turnon_lau2,cl1_lau2,cl2_lau2,cl3_lau2));//step*(ax^b+cx^d+fx^g) 
+  RooGenericPdf step_lau3("step_lau3", "step_lau3", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5)+@4*(@0)^(-3)+@5*(@0)^(-6))", RooArgList(mH,turnon_lau3,cl1_lau3,cl2_lau3,cl3_lau3,cl4_lau3));//step*(ax^b+cx^d)
+  RooGaussModel gau_lau1("gau_lau1","gau_lau1",mH,mean_lau1,sigma_lau1);
+  RooGaussModel gau_lau2("gau_lau2","gau_lau2",mH,mean_lau2,sigma_lau2);
+  RooGaussModel gau_lau3("gau_lau3","gau_lau3",mH,mean_lau3,sigma_lau3);
+  RooFFTConvPdf gauxlau1("gauxlau1","gauxlau1",mH,step_lau1,gau_lau1);
+  RooFFTConvPdf gauxlau2("gauxlau2","gauxlau2",mH,step_lau2,gau_lau2);
+  RooFFTConvPdf gauxlau3("gauxlau3","gauxlau3",mH,step_lau3,gau_lau3);
 
+
+  // testing with generic exponential
   // RooExponential expo("expo", "",mH)
   // RooDecay exp("exp","", mH,tau,turnon,RooDecay::SingleSided);
 
@@ -119,6 +151,9 @@ void testturn()
   RooFitResult *pow1_fit = gauxpow1.fitTo(data,Range("window"),Save(kTRUE));
   RooFitResult *pow3_fit = gauxpow3.fitTo(data,Range("window"),Save(kTRUE));
   RooFitResult *pow5_fit = gauxpow5.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *lau1_fit = gauxlau1.fitTo(data,Range("window"),Save(kTRUE));
+  // RooFitResult *lau2_fit = gauxlau2.fitTo(data,Range("window"),Save(kTRUE));
+  // RooFitResult *lau3_fit = gauxlau3.fitTo(data,Range("window"),Save(kTRUE));
   RooPlot* xframe1  = mH.frame() ;
   mH.setRange("blind1",100,120) ;
   mH.setRange("blind2",130,180);
@@ -127,6 +162,9 @@ void testturn()
   gauxpow1.plotOn(xframe1,RooFit::Name("gauxpow1"));
   gauxpow3.plotOn(xframe1,RooFit::Name("gauxpow3"),LineColor(kOrange-3));
   gauxpow5.plotOn(xframe1,RooFit::Name("gauxpow5"),LineColor(kRed));
+  // gauxlau1.plotOn(xframe1,RooFit::Name("gauxlau1"));
+  // gauxlau2.plotOn(xframe1,RooFit::Name("gauxlau2"),LineColor(kRed));
+  // gauxlau3.plotOn(xframe1,RooFit::Name("gauxlau3"),LineColor(kOrange-3));
   // bern1.plotOn(xframe1, RooFit::Name("bern1"),LineColor(kGreen));
   // bern2.plotOn(xframe1, RooFit::Name("bern2"),LineColor(kMagenta));
   // bern3.plotOn(xframe1, RooFit::Name("bern3"),LineColor(kBlue));
@@ -146,6 +184,9 @@ void testturn()
   leg4->AddEntry(xframe1->findObject("gauxpow1"), "pow1", "l");
   leg4->AddEntry(xframe1->findObject("gauxpow3"), "pow3", "l");
   leg4->AddEntry(xframe1->findObject("gauxpow5"), "pow5", "l");
+  // leg4->AddEntry(xframe1->findObject("gauxlau1"), "lau1", "l");
+  // leg4->AddEntry(xframe1->findObject("gauxlau2"), "lau2", "l");
+  // leg4->AddEntry(xframe1->findObject("gauxlau3"), "lau3", "l");
   // //leg4->AddEntry(xframe1->findObject("bern6"), "bern6", "l");
   leg4->Draw("same");
 
