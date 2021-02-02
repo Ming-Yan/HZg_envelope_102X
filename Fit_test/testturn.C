@@ -47,6 +47,7 @@ void testturn()
   RooRealVar mH("mH", "mH", 100, 180, "GeV") ;
   mH.setRange("window",100, 180);
   RooDataSet data("data", " ", RooArgSet(mH), Import(*DataTree1));
+
   //generetic Bernstein polynomials
   RooRealVar mean("mean","mean",0);
   RooRealVar sigma("sigma","sigma",3,0.01,20);
@@ -79,70 +80,59 @@ void testturn()
   RooRealVar sigmag("sigmag","sigmag",1,0.01,10);
   RooRealVar tau("tau","tau",5,0,50);
   RooGaussModel turnon("turnon","",mH,meang,sigmag);
-    //testing with generic power law 
-    RooRealVar mean_pow1("mean_pow1","mean_pow1",0);
-    RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",2,0.0001,20);
-    RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",105,80,120);
-    RooRealVar mean_pow2("mean_pow2","mean_pow2",0);
-    RooRealVar sigma_pow2("sigma_pow2","sigma_pow2",2,0.0001,20);
-    RooRealVar turnon_pow2("turnon_pow2","turnon_pow2",105,80,120);
-    RooRealVar mean_pow3("mean_pow3","mean_pow3",0);
-    RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",2,0.0001,20);
-    RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",105,80,120);
-    RooRealVar p1_pow1("p1_pow1","p1_pow1",0.5,-10,10.);
-    RooRealVar p1_pow2("p1_pow2","p1_pow2",0.5,-10,10.);
-    RooRealVar p1_pow3("p1_pow3","p1_pow3",0.5,-10,10.);
-    RooRealVar p2_pow2("p2_pow2","p2_pow2",1.,-10,10.);
-    RooRealVar p2_pow3("p2_pow3","p2_pow3",1.,-10,10.);
-    RooRealVar p3_pow3("p3_pow3","p3_pow3",0.2,-10,10.);
-    RooGenericPdf step_pow1("step_pow1", "step_pow1", "1e-20+(@0> @1)*((@2/(@0*@0)))", RooArgList(mH,turnon_pow1,p1_pow1));//step*(ax^-2)
-    RooGenericPdf step_pow2("step_pow2", "step_pow2", "1e-20+(@0> @1)*((@2/(@0*@0))+(@3/(@0*@0*@0)))", RooArgList(mH,turnon_pow2,p1_pow2,p2_pow2));//step*(ax^-2+bx^-3)
-    RooGenericPdf step_pow3("step_pow3", "step_pow3", "1e-20+(@0> @1)*((@2/(@0*@0))+(@3/(@0*@0*@0))+(@4/(@0*@0*@0*@0)))", RooArgList(mH,turnon_pow3,p1_pow3,p2_pow3,p3_pow3));//step*(ax^-2+bx^-3+cx^-4)
-    RooGaussModel gau_pow1("gau_pow1","gau_pow1",mH,mean_pow1,sigma_pow1);
-    RooGaussModel gau_pow2("gau_pow2","gau_pow2",mH,mean_pow2,sigma_pow2);
-    RooGaussModel gau_pow3("gau_pow3","gau_pow3",mH,mean_pow3,sigma_pow3);
-    RooFFTConvPdf gauxpow1("gauxpow1","gauxpow1",mH,step_pow1,gau_pow1);
-    RooFFTConvPdf gauxpow2("gauxpow2","gauxpow2",mH,step_pow2,gau_pow2);
-    RooFFTConvPdf gauxpow3("gauxpow3","gauxpow3",mH,step_pow3,gau_pow3);
+  //testing with generic power law 
+  RooRealVar mean_pow1("mean_pow1","mean_pow1",0);
+  RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",2,0.0001,20);
+  RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",105,80,120);
+  RooRealVar mean_pow3("mean_pow3","mean_pow3",0);
+  RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",2,0.0001,20);
+  RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",105,80,120);
+  RooRealVar mean_pow5("mean_pow5","mean_pow5",0);
+  RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",2,0.0001,20);
+  RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",105,80,120);
+  RooRealVar p1_pow1("p1_pow1","p1_pow1",0.5,-10,10.);
+  RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.5,0,1.);
+  RooRealVar p1_pow3("p1_pow3","p1_pow3",0.5,-10,10.);
+  RooRealVar cp1_pow3("cp1_pow3","cp1_pow3",1.,0.,1.);
+  RooRealVar p3_pow3("p3_pow3","p3_pow3",0.5,-10.,10.);
+  RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",0.5,0,1.);
+  RooRealVar p1_pow5("p1_pow5","p1_pow5",0.5,-10,10.);
+  RooRealVar cp1_pow5("cp1_pow5","cp1_pow5",1.,0.,1.);
+  RooRealVar p3_pow5("p3_pow5","p3_pow5",0.5,-10.,10.);
+  RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",0.5,0,1.);
+  RooRealVar p5_pow5("p5_pow5","p5_pow5",0.5,-10.,10.);
+  RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.5,0,1.);
+  RooGenericPdf step_pow1("step_pow1", "step_pow1", "1e-20+(@0 > @1)*(@3*(@0)^(@2))", RooArgList(mH,turnon_pow1,p1_pow1,cp1_pow1));//step*(ax^b)
+  RooGenericPdf step_pow3("step_pow3", "step_pow3", "1e-20+(@0 > @1)*(@3*(@0)^(@2)+@5*(@0)^(@4))", RooArgList(mH,turnon_pow3,p1_pow3,cp1_pow3,p3_pow3,cp3_pow3));//step*(ax^b+cx^d)
+  RooGenericPdf step_pow5("step_pow5", "step_pow5", "1e-20+(@0 > @1)*(@3*(@0)^(@2)+@5*(@0)^(@4)+@7*(@0)^(@6))", RooArgList(mH,turnon_pow5,p1_pow5,cp1_pow5,p3_pow5,cp3_pow5,p5_pow5,cp5_pow5));//step*(ax^b+cx^d+fx^g)
+  RooGaussModel gau_pow1("gau_pow1","gau_pow1",mH,mean_pow1,sigma_pow1);
+  RooGaussModel gau_pow3("gau_pow3","gau_pow3",mH,mean_pow3,sigma_pow3);
+  RooGaussModel gau_pow5("gau_pow5","gau_pow5",mH,mean_pow5,sigma_pow5);
+  RooFFTConvPdf gauxpow1("gauxpow1","gauxpow1",mH,step_pow1,gau_pow1);
+  RooFFTConvPdf gauxpow3("gauxpow3","gauxpow3",mH,step_pow3,gau_pow3);
+  RooFFTConvPdf gauxpow5("gauxpow5","gauxpow5",mH,step_pow5,gau_pow5);
 
   // RooExponential expo("expo", "",mH)
   // RooDecay exp("exp","", mH,tau,turnon,RooDecay::SingleSided);
-    //   RooFitResult* bern2_fit= bern2.fitTo(data, Range("window"), Save(kTRUE)) ;
-  //   RooFitResult* bern1_fit= bern1.fitTo(data, Range("window"), Save(kTRUE)) ;
 
-  // RooFitResult* bern3_fit= bern3.fitTo(data, Range("window"), Save(kTRUE)) ;
-  // RooFitResult* bern4_fit= bern4.fitTo(data, Range("window"), Save(kTRUE)) ;
-  // RooFitResult* bern5_fit= bern5.fitTo(data, Range("window"), Save(kTRUE)) ;
-  // RooFitResult* exp_fit = exp.fitTo(data, Range("window"), Save(kTRUE));
 
-  // RooFitResult* pow_fit =pow->fitTo(data, Range("window"), Save(kTRUE));
-  //RooFitResult* bern6_fit= bern6.fitTo(data, Range("window"), Save(kTRUE)) ;
   RooFitResult *pow1_fit = gauxpow1.fitTo(data,Range("window"),Save(kTRUE));
-  RooFitResult *pow2_fit = gauxpow2.fitTo(data,Range("window"),Save(kTRUE));
   RooFitResult *pow3_fit = gauxpow3.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *pow5_fit = gauxpow5.fitTo(data,Range("window"),Save(kTRUE));
   RooPlot* xframe1  = mH.frame() ;
   mH.setRange("blind1",100,120) ;
   mH.setRange("blind2",130,180);
-  // gauxpow.plotOn(xframe1);
-  // stepxpow.plotOn(xframe1);
-  // pow->plotOn(xframe1);
- 
-  // step_pow.plotOn(xframe1);
-  // tail.plotOn(xframe1,LineColor(kRed));
   data.plotOn(xframe1,Binning(80),CutRange("blind1"),RooFit::Name("data")) ;
   data.plotOn(xframe1,Binning(80),CutRange("blind2")) ;
-  // //prod.plotOn(xframe1);
   gauxpow1.plotOn(xframe1,RooFit::Name("gauxpow1"));
-  gauxpow2.plotOn(xframe1,RooFit::Name("gauxpow2"),LineColor(kRed));
   gauxpow3.plotOn(xframe1,RooFit::Name("gauxpow3"),LineColor(kOrange-3));
-  //   bern1.plotOn(xframe1, RooFit::Name("bern1"),LineColor(kGreen));
-  //   bern2.plotOn(xframe1, RooFit::Name("bern2"),LineColor(kMagenta));
+  gauxpow5.plotOn(xframe1,RooFit::Name("gauxpow5"),LineColor(kRed));
+  // bern1.plotOn(xframe1, RooFit::Name("bern1"),LineColor(kGreen));
+  // bern2.plotOn(xframe1, RooFit::Name("bern2"),LineColor(kMagenta));
   // bern3.plotOn(xframe1, RooFit::Name("bern3"),LineColor(kBlue));
   // bern4.plotOn(xframe1, RooFit::Name("bern4"),LineColor(kRed));
   // bern5.plotOn(xframe1, RooFit::Name("bern5"),LineColor(kOrange-3));
   // exp.plotOn(xframe1,RooFit::Name("exp"),LineColor(kAzure+1),LineStyle(kDashed));
-  // pow->plotOn(xframe1,RooFit::Name("pow"),LineColor(kGray+2),LineStyle(kDashed));
-  // powgau.plotOn(xframe1,LineColor(kBlue));    
   xframe1->SetMinimum(0.0001);
   xframe1->Draw();
   TLegend* leg4 = new TLegend(0.7,0.5,0.9,0.9);
@@ -154,8 +144,8 @@ void testturn()
   // leg4->AddEntry(xframe1->findObject("bern5"), "bern5", "l");
   // leg4->AddEntry(xframe1->findObject("exp"), "exp", "l");
   leg4->AddEntry(xframe1->findObject("gauxpow1"), "pow1", "l");
-  leg4->AddEntry(xframe1->findObject("gauxpow2"), "pow2", "l");
   leg4->AddEntry(xframe1->findObject("gauxpow3"), "pow3", "l");
+  leg4->AddEntry(xframe1->findObject("gauxpow5"), "pow5", "l");
   // //leg4->AddEntry(xframe1->findObject("bern6"), "bern6", "l");
   leg4->Draw("same");
 
