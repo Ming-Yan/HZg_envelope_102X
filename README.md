@@ -75,4 +75,3 @@ The modes are used for the following (run in sequential order):
   * `datacard` - build the .txt datacard using the S & B models. The yield variations from systematics are also calculated and specified in the datacard. To merge datacards for different years then use the `combineCards.py` script (in combine).
   * `combine`  - compile the RooWorkspace from the .txt datacard. Run the fit in combine. Input options are specified in `Plots/FinalResults/combineHarvesterOptions_Template.dat`
   * `combinePlots` - create plots from finished combine jobs. Options are specified in `Plots/FinalResults/combinePlotsOptions_Template.dat`
-
