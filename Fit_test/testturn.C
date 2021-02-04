@@ -1,5 +1,5 @@
-#include "RooStepBernstein.h"
-#include "RooGaussStepBernstein.h"
+// #include "RooStepBernstein.h"
+// #include "RooGaussStepBernstein.h"
 #include "RooExponential.h"
 #ifndef __CINT__
 #include "RooGlobalFunc.h"
@@ -10,7 +10,7 @@
 #include "boost/algorithm/string/split.hpp"
 #include "boost/algorithm/string/classification.hpp"
 #include "boost/algorithm/string/predicate.hpp"
-
+#include "/data3/mingyan/CMSSW_7_4_7/src/HiggsAnalysis/CombinedLimit/interface/RooMultiPdf.h"
 //#include "boost/program_options.hpp"                                                                             
 #include "boost/lexical_cast.hpp"
 #include <RooGaussModel.h>
@@ -47,8 +47,10 @@ void testturn()
   RooRealVar mH("mH", "mH", 100, 180, "GeV") ;
   mH.setRange("window",100, 180);
   RooDataSet data("data", " ", RooArgSet(mH), Import(*DataTree1));
-
+  RooArgList storedPdfs("store");
+  TFile *fout  = new TFile("turnon_leptag.root","recreate");
   //generetic Bernstein polynomials
+  
   RooRealVar mean("mean","mean",0);
   RooRealVar sigma("sigma","sigma",3,0.01,20);
   RooRealVar step("step","step",110,100,120);
@@ -122,7 +124,6 @@ void testturn()
   RooRealVar mean_lau3("mean_lau3","mean_lau3",0);
   RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",2,0.0001,20);
   RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",105,80,120);
-  
   RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",0.25,0,1.);
   RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",0.25,0,1.);
   RooRealVar cl1_lau2("cl1_lau2","cl1_lau2",0.25,0.,1.);
@@ -144,24 +145,89 @@ void testturn()
 
 
   // testing with generic exponential
-  // RooExponential expo("expo", "",mH)
-  // RooDecay exp("exp","", mH,tau,turnon,RooDecay::SingleSided);
-
+  RooRealVar mean_exp1("mean_exp1","mean_exp1",0);
+  RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",2,0.0001,20);
+  RooRealVar turnon_exp1("turnon_exp1","turnon_exp1",105,80,120);
+  RooRealVar mean_exp3("mean_exp3","mean_exp3",0);
+  RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",2,0.0001,20);
+  RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",105,80,120);
+  RooRealVar mean_exp5("mean_exp5","mean_exp5",0);
+  RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",2,0.0001,20);
+  RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",105,80,120);
+  RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.01,-0.5,0.);
+  RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.5,0,1.);
+  RooRealVar p1_exp3("p1_exp3","p1_exp3",-0.01,-0.5,0.);
+  RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",1.,0.,1.);
+  RooRealVar p3_exp3("p3_exp3","p3_exp3",-0.01,-0.5,0.);
+  RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",0.5,0,1.);
+  RooRealVar p1_exp5("p1_exp5","p1_exp5",-0.01,-0.5,0.);
+  RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",1.,0.,1.);
+  RooRealVar p3_exp5("p3_exp5","p3_exp5",-0.01,-0.5,0.);
+  RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",0.5,0,1.);
+  RooRealVar p5_exp5("p5_exp5","p5_exp5",-0.01,-0.5,0.);
+  RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",0.5,0,1.);
+  RooGenericPdf step_exp1("step_exp1", "step_exp1", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2))", RooArgList(mH,turnon_exp1,p1_exp1,cp1_exp1));//step*(ax^b)
+  RooGenericPdf step_exp3("step_exp3", "step_exp3", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2)+@5*TMath::Exp(@0*@4))", RooArgList(mH,turnon_exp3,p1_exp3,cp1_exp3,p3_exp3,cp3_exp3));//step*(ax^b+cx^d)
+  RooGenericPdf step_exp5("step_exp5", "step_exp5", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2)+@5*TMath::Exp(@0*@4)+@7*TMath::Exp(@0*@6))", RooArgList(mH,turnon_exp5,p1_exp5,cp1_exp5,p3_exp5,cp3_exp5,p5_exp5,cp5_exp5));//step*(ax^b+cx^d+fx^g)
+  RooGaussModel gau_exp1("gau_exp1","gau_exp1",mH,mean_exp1,sigma_exp1);
+  RooGaussModel gau_exp3("gau_exp3","gau_exp3",mH,mean_exp3,sigma_exp3);
+  RooGaussModel gau_exp5("gau_exp5","gau_exp5",mH,mean_exp5,sigma_exp5);
+  RooFFTConvPdf gauxexp1("gauxexp1","gauxexp1",mH,step_exp1,gau_exp1);
+  RooFFTConvPdf gauxexp3("gauxexp3","gauxexp3",mH,step_exp3,gau_exp3);
+  RooFFTConvPdf gauxexp5("gauxexp5","gauxexp5",mH,step_exp5,gau_exp5);
 
   RooFitResult *pow1_fit = gauxpow1.fitTo(data,Range("window"),Save(kTRUE));
   RooFitResult *pow3_fit = gauxpow3.fitTo(data,Range("window"),Save(kTRUE));
   RooFitResult *pow5_fit = gauxpow5.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *exp1_fit = gauxexp1.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *exp3_fit = gauxexp3.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *exp5_fit = gauxexp5.fitTo(data,Range("window"),Save(kTRUE));
   RooFitResult *lau1_fit = gauxlau1.fitTo(data,Range("window"),Save(kTRUE));
-  // RooFitResult *lau2_fit = gauxlau2.fitTo(data,Range("window"),Save(kTRUE));
-  // RooFitResult *lau3_fit = gauxlau3.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *lau2_fit = gauxlau2.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *lau3_fit = gauxlau3.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *bern1_fit = bern1.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *bern2_fit = bern2.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *bern3_fit = bern3.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *bern4_fit = bern4.fitTo(data,Range("window"),Save(kTRUE));
+  RooFitResult *bern5_fit = bern5.fitTo(data,Range("window"),Save(kTRUE));
+
+  storedPdfs.add(gauxexp1);
+  storedPdfs.add(gauxexp3);
+  storedPdfs.add(gauxexp5);
+  storedPdfs.add(gauxpow1);
+  storedPdfs.add(gauxpow3);
+  storedPdfs.add(gauxpow5);
+  storedPdfs.add(gauxlau1);
+  storedPdfs.add(gauxlau2);
+  storedPdfs.add(gauxlau3);
+  storedPdfs.add(bern1);
+  storedPdfs.add(bern2);
+  storedPdfs.add(bern3);
+  storedPdfs.add(bern4);
+  storedPdfs.add(bern5);
+  RooWorkspace *ws =  new RooWorkspace();
+  RooCategory catIndex("catIndex","c");
+  RooMultiPdf *pdf = new RooMultiPdf("CMS_hzg_bkgshape","all pdfs",catIndex,storedPdfs);
+  RooRealVar nBackground("CMS_hzg_bkgshape_norm","nbkg",data.sumEntries(),0,10E8);
+  ws->SetName("multipdf");
+  ws->import(*pdf);
+  ws->import(nBackground);
+  ws->import(catIndex);
+  ws->import(data);
+  fout->cd();
+  ws->Write();
+  fout->Close();
   RooPlot* xframe1  = mH.frame() ;
   mH.setRange("blind1",100,120) ;
   mH.setRange("blind2",130,180);
   data.plotOn(xframe1,Binning(80),CutRange("blind1"),RooFit::Name("data")) ;
   data.plotOn(xframe1,Binning(80),CutRange("blind2")) ;
-  gauxpow1.plotOn(xframe1,RooFit::Name("gauxpow1"));
-  gauxpow3.plotOn(xframe1,RooFit::Name("gauxpow3"),LineColor(kOrange-3));
-  gauxpow5.plotOn(xframe1,RooFit::Name("gauxpow5"),LineColor(kRed));
+  // gauxpow1.plotOn(xframe1,RooFit::Name("gauxpow1"));
+  // gauxpow3.plotOn(xframe1,RooFit::Name("gauxpow3"),LineColor(kOrange-3));
+  // gauxpow5.plotOn(xframe1,RooFit::Name("gauxpow5"),LineColor(kRed));
+  gauxexp1.plotOn(xframe1,RooFit::Name("gauxexp1"));
+  gauxexp3.plotOn(xframe1,RooFit::Name("gauxexp3"),LineColor(kOrange-3));
+  gauxexp5.plotOn(xframe1,RooFit::Name("gauxexp5"),LineColor(kRed));
   // gauxlau1.plotOn(xframe1,RooFit::Name("gauxlau1"));
   // gauxlau2.plotOn(xframe1,RooFit::Name("gauxlau2"),LineColor(kRed));
   // gauxlau3.plotOn(xframe1,RooFit::Name("gauxlau3"),LineColor(kOrange-3));
@@ -181,9 +247,12 @@ void testturn()
   // leg4->AddEntry(xframe1->findObject("bern4"), "bern4", "l");
   // leg4->AddEntry(xframe1->findObject("bern5"), "bern5", "l");
   // leg4->AddEntry(xframe1->findObject("exp"), "exp", "l");
-  leg4->AddEntry(xframe1->findObject("gauxpow1"), "pow1", "l");
-  leg4->AddEntry(xframe1->findObject("gauxpow3"), "pow3", "l");
-  leg4->AddEntry(xframe1->findObject("gauxpow5"), "pow5", "l");
+  // leg4->AddEntry(xframe1->findObject("gauxpow1"), "pow1", "l");
+  // leg4->AddEntry(xframe1->findObject("gauxpow3"), "pow3", "l");
+  // leg4->AddEntry(xframe1->findObject("gauxpow5"), "pow5", "l");
+  leg4->AddEntry(xframe1->findObject("gauxexp1"), "exp1", "l");
+  leg4->AddEntry(xframe1->findObject("gauxexp3"), "exp3", "l");
+  leg4->AddEntry(xframe1->findObject("gauxexp5"), "exp5", "l");
   // leg4->AddEntry(xframe1->findObject("gauxlau1"), "lau1", "l");
   // leg4->AddEntry(xframe1->findObject("gauxlau2"), "lau2", "l");
   // leg4->AddEntry(xframe1->findObject("gauxlau3"), "lau3", "l");
