@@ -42,11 +42,15 @@
 using namespace RooFit;
 void testturn()
 {
+  gSystem->Load("RooStepBernstein_cxx.so");
+  gSystem->Load("RooGaussStepBernstein_cxx.so");
+  gSystem->Load("libHiggsAnalysisCombinedLimit.so");
+
   TTree* DataTree1 = makeTTree("HiggsMass_ptwei_bkg_ele_mu_cat6789_2020_full.txt");
   int totalev = DataTree1->GetEntriesFast();
-  RooRealVar mH("mH", "mH", 100, 180, "GeV") ;
-  mH.setRange("window",100, 180);
-  RooDataSet data("data", " ", RooArgSet(mH), Import(*DataTree1));
+  RooRealVar CMS_hzg_mass("CMS_hzg_mass", "CMS_hzg_mass", 100, 180, "GeV") ;
+  CMS_hzg_mass.setRange("window",100, 180);
+  RooDataSet data("data", " ", RooArgSet(CMS_hzg_mass), Import(*DataTree1));
   RooArgList storedPdfs("store");
   TFile *fout  = new TFile("turnon_leptag.root","recreate");
   //generetic Bernstein polynomials
@@ -73,15 +77,15 @@ void testturn()
   RooRealVar b3p5("b3p5","b3p5",0.3,-1e-6,900);
   RooRealVar b4p5("b4p5","b4p5",0.3,-1e-6,900);
   RooRealVar b5p5("b5p5","b5p5",0.3,-1e-6,900);
-  RooGaussStepBernstein bern1("bern1","bern1",mH,mean,sigma,step, RooArgList(p0,b1p1));
-  RooGaussStepBernstein bern2("bern2","bern2",mH,mean,sigma,step, RooArgList(p0,b2p1,b2p2));
-  RooGaussStepBernstein bern3("bern3","bern3",mH,mean,sigma,step, RooArgList(p0,b3p1,b3p2,b3p3));
-  RooGaussStepBernstein bern4("bern4","bern4",mH,mean,sigma,step, RooArgList(p0,b4p1,b4p2,b4p3,b4p4));
-  RooGaussStepBernstein bern5("bern5","bern5",mH,mean,sigma,step, RooArgList(p0,b5p1,b5p2,b5p3,b5p4,b5p5));
+  RooGaussStepBernstein bern1("bern1","bern1",CMS_hzg_mass,mean,sigma,step, RooArgList(p0,b1p1));
+  RooGaussStepBernstein bern2("bern2","bern2",CMS_hzg_mass,mean,sigma,step, RooArgList(p0,b2p1,b2p2));
+  RooGaussStepBernstein bern3("bern3","bern3",CMS_hzg_mass,mean,sigma,step, RooArgList(p0,b3p1,b3p2,b3p3));
+  RooGaussStepBernstein bern4("bern4","bern4",CMS_hzg_mass,mean,sigma,step, RooArgList(p0,b4p1,b4p2,b4p3,b4p4));
+  RooGaussStepBernstein bern5("bern5","bern5",CMS_hzg_mass,mean,sigma,step, RooArgList(p0,b5p1,b5p2,b5p3,b5p4,b5p5));
   RooRealVar meang("meang","meang",120,90,150);
   RooRealVar sigmag("sigmag","sigmag",1,0.01,10);
   RooRealVar tau("tau","tau",5,0,50);
-  RooGaussModel turnon("turnon","",mH,meang,sigmag);
+  RooGaussModel turnon("turnon","",CMS_hzg_mass,meang,sigmag);
   //testing with generic power law 
   RooRealVar mean_pow1("mean_pow1","mean_pow1",0);
   RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",2,0.0001,20);
@@ -104,15 +108,15 @@ void testturn()
   RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",0.5,0,1.);
   RooRealVar p5_pow5("p5_pow5","p5_pow5",0.5,-10.,10.);
   RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.5,0,1.);
-  RooGenericPdf step_pow1("step_pow1", "step_pow1", "1e-20+(@0 > @1)*(@3*(@0)^(@2))", RooArgList(mH,turnon_pow1,p1_pow1,cp1_pow1));//step*(ax^b)
-  RooGenericPdf step_pow3("step_pow3", "step_pow3", "1e-20+(@0 > @1)*(@3*(@0)^(@2)+@5*(@0)^(@4))", RooArgList(mH,turnon_pow3,p1_pow3,cp1_pow3,p3_pow3,cp3_pow3));//step*(ax^b+cx^d)
-  RooGenericPdf step_pow5("step_pow5", "step_pow5", "1e-20+(@0 > @1)*(@3*(@0)^(@2)+@5*(@0)^(@4)+@7*(@0)^(@6))", RooArgList(mH,turnon_pow5,p1_pow5,cp1_pow5,p3_pow5,cp3_pow5,p5_pow5,cp5_pow5));//step*(ax^b+cx^d+fx^g)
-  RooGaussModel gau_pow1("gau_pow1","gau_pow1",mH,mean_pow1,sigma_pow1);
-  RooGaussModel gau_pow3("gau_pow3","gau_pow3",mH,mean_pow3,sigma_pow3);
-  RooGaussModel gau_pow5("gau_pow5","gau_pow5",mH,mean_pow5,sigma_pow5);
-  RooFFTConvPdf gauxpow1("gauxpow1","gauxpow1",mH,step_pow1,gau_pow1);
-  RooFFTConvPdf gauxpow3("gauxpow3","gauxpow3",mH,step_pow3,gau_pow3);
-  RooFFTConvPdf gauxpow5("gauxpow5","gauxpow5",mH,step_pow5,gau_pow5);
+  RooGenericPdf step_pow1("step_pow1", "step_pow1", "1e-20+(@0 > @1)*(@3*(@0)^(@2))", RooArgList(CMS_hzg_mass,turnon_pow1,p1_pow1,cp1_pow1));//step*(ax^b)
+  RooGenericPdf step_pow3("step_pow3", "step_pow3", "1e-20+(@0 > @1)*(@3*(@0)^(@2)+@5*(@0)^(@4))", RooArgList(CMS_hzg_mass,turnon_pow3,p1_pow3,cp1_pow3,p3_pow3,cp3_pow3));//step*(ax^b+cx^d)
+  RooGenericPdf step_pow5("step_pow5", "step_pow5", "1e-20+(@0 > @1)*(@3*(@0)^(@2)+@5*(@0)^(@4)+@7*(@0)^(@6))", RooArgList(CMS_hzg_mass,turnon_pow5,p1_pow5,cp1_pow5,p3_pow5,cp3_pow5,p5_pow5,cp5_pow5));//step*(ax^b+cx^d+fx^g)
+  RooGaussModel gau_pow1("gau_pow1","gau_pow1",CMS_hzg_mass,mean_pow1,sigma_pow1);
+  RooGaussModel gau_pow3("gau_pow3","gau_pow3",CMS_hzg_mass,mean_pow3,sigma_pow3);
+  RooGaussModel gau_pow5("gau_pow5","gau_pow5",CMS_hzg_mass,mean_pow5,sigma_pow5);
+  RooFFTConvPdf gauxpow1("gauxpow1","gauxpow1",CMS_hzg_mass,step_pow1,gau_pow1);
+  RooFFTConvPdf gauxpow3("gauxpow3","gauxpow3",CMS_hzg_mass,step_pow3,gau_pow3);
+  RooFFTConvPdf gauxpow5("gauxpow5","gauxpow5",CMS_hzg_mass,step_pow5,gau_pow5);
   
   //testing with generic Laurent
   RooRealVar mean_lau1("mean_lau1","mean_lau1",0);
@@ -133,15 +137,15 @@ void testturn()
   RooRealVar cl2_lau3("cl2_lau3","cl2_lau3",0.25,0.,1.);
   RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",0.25/2.,0,1.);
   RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",0.25/3.,0,1.);
-  RooGenericPdf step_lau1("step_lau1", "step_lau1", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5))", RooArgList(mH,turnon_lau1,cl1_lau1,cl2_lau1));//step*(ax^b)
-  RooGenericPdf step_lau2("step_lau2", "step_lau2", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5)+@4*(@0)^(-3))", RooArgList(mH,turnon_lau2,cl1_lau2,cl2_lau2,cl3_lau2));//step*(ax^b+cx^d+fx^g) 
-  RooGenericPdf step_lau3("step_lau3", "step_lau3", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5)+@4*(@0)^(-3)+@5*(@0)^(-6))", RooArgList(mH,turnon_lau3,cl1_lau3,cl2_lau3,cl3_lau3,cl4_lau3));//step*(ax^b+cx^d)
-  RooGaussModel gau_lau1("gau_lau1","gau_lau1",mH,mean_lau1,sigma_lau1);
-  RooGaussModel gau_lau2("gau_lau2","gau_lau2",mH,mean_lau2,sigma_lau2);
-  RooGaussModel gau_lau3("gau_lau3","gau_lau3",mH,mean_lau3,sigma_lau3);
-  RooFFTConvPdf gauxlau1("gauxlau1","gauxlau1",mH,step_lau1,gau_lau1);
-  RooFFTConvPdf gauxlau2("gauxlau2","gauxlau2",mH,step_lau2,gau_lau2);
-  RooFFTConvPdf gauxlau3("gauxlau3","gauxlau3",mH,step_lau3,gau_lau3);
+  RooGenericPdf step_lau1("step_lau1", "step_lau1", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5))", RooArgList(CMS_hzg_mass,turnon_lau1,cl1_lau1,cl2_lau1));//step*(ax^b)
+  RooGenericPdf step_lau2("step_lau2", "step_lau2", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5)+@4*(@0)^(-3))", RooArgList(CMS_hzg_mass,turnon_lau2,cl1_lau2,cl2_lau2,cl3_lau2));//step*(ax^b+cx^d+fx^g) 
+  RooGenericPdf step_lau3("step_lau3", "step_lau3", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5)+@4*(@0)^(-3)+@5*(@0)^(-6))", RooArgList(CMS_hzg_mass,turnon_lau3,cl1_lau3,cl2_lau3,cl3_lau3,cl4_lau3));//step*(ax^b+cx^d)
+  RooGaussModel gau_lau1("gau_lau1","gau_lau1",CMS_hzg_mass,mean_lau1,sigma_lau1);
+  RooGaussModel gau_lau2("gau_lau2","gau_lau2",CMS_hzg_mass,mean_lau2,sigma_lau2);
+  RooGaussModel gau_lau3("gau_lau3","gau_lau3",CMS_hzg_mass,mean_lau3,sigma_lau3);
+  RooFFTConvPdf gauxlau1("gauxlau1","gauxlau1",CMS_hzg_mass,step_lau1,gau_lau1);
+  RooFFTConvPdf gauxlau2("gauxlau2","gauxlau2",CMS_hzg_mass,step_lau2,gau_lau2);
+  RooFFTConvPdf gauxlau3("gauxlau3","gauxlau3",CMS_hzg_mass,step_lau3,gau_lau3);
 
 
   // testing with generic exponential
@@ -166,15 +170,15 @@ void testturn()
   RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",0.5,0,1.);
   RooRealVar p5_exp5("p5_exp5","p5_exp5",-0.01,-0.5,0.);
   RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",0.5,0,1.);
-  RooGenericPdf step_exp1("step_exp1", "step_exp1", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2))", RooArgList(mH,turnon_exp1,p1_exp1,cp1_exp1));//step*(ax^b)
-  RooGenericPdf step_exp3("step_exp3", "step_exp3", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2)+@5*TMath::Exp(@0*@4))", RooArgList(mH,turnon_exp3,p1_exp3,cp1_exp3,p3_exp3,cp3_exp3));//step*(ax^b+cx^d)
-  RooGenericPdf step_exp5("step_exp5", "step_exp5", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2)+@5*TMath::Exp(@0*@4)+@7*TMath::Exp(@0*@6))", RooArgList(mH,turnon_exp5,p1_exp5,cp1_exp5,p3_exp5,cp3_exp5,p5_exp5,cp5_exp5));//step*(ax^b+cx^d+fx^g)
-  RooGaussModel gau_exp1("gau_exp1","gau_exp1",mH,mean_exp1,sigma_exp1);
-  RooGaussModel gau_exp3("gau_exp3","gau_exp3",mH,mean_exp3,sigma_exp3);
-  RooGaussModel gau_exp5("gau_exp5","gau_exp5",mH,mean_exp5,sigma_exp5);
-  RooFFTConvPdf gauxexp1("gauxexp1","gauxexp1",mH,step_exp1,gau_exp1);
-  RooFFTConvPdf gauxexp3("gauxexp3","gauxexp3",mH,step_exp3,gau_exp3);
-  RooFFTConvPdf gauxexp5("gauxexp5","gauxexp5",mH,step_exp5,gau_exp5);
+  RooGenericPdf step_exp1("step_exp1", "step_exp1", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2))", RooArgList(CMS_hzg_mass,turnon_exp1,p1_exp1,cp1_exp1));//step*(ax^b)
+  RooGenericPdf step_exp3("step_exp3", "step_exp3", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2)+@5*TMath::Exp(@0*@4))", RooArgList(CMS_hzg_mass,turnon_exp3,p1_exp3,cp1_exp3,p3_exp3,cp3_exp3));//step*(ax^b+cx^d)
+  RooGenericPdf step_exp5("step_exp5", "step_exp5", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2)+@5*TMath::Exp(@0*@4)+@7*TMath::Exp(@0*@6))", RooArgList(CMS_hzg_mass,turnon_exp5,p1_exp5,cp1_exp5,p3_exp5,cp3_exp5,p5_exp5,cp5_exp5));//step*(ax^b+cx^d+fx^g)
+  RooGaussModel gau_exp1("gau_exp1","gau_exp1",CMS_hzg_mass,mean_exp1,sigma_exp1);
+  RooGaussModel gau_exp3("gau_exp3","gau_exp3",CMS_hzg_mass,mean_exp3,sigma_exp3);
+  RooGaussModel gau_exp5("gau_exp5","gau_exp5",CMS_hzg_mass,mean_exp5,sigma_exp5);
+  RooFFTConvPdf gauxexp1("gauxexp1","gauxexp1",CMS_hzg_mass,step_exp1,gau_exp1);
+  RooFFTConvPdf gauxexp3("gauxexp3","gauxexp3",CMS_hzg_mass,step_exp3,gau_exp3);
+  RooFFTConvPdf gauxexp5("gauxexp5","gauxexp5",CMS_hzg_mass,step_exp5,gau_exp5);
 
   RooFitResult *pow1_fit = gauxpow1.fitTo(data,Range("window"),Save(kTRUE));
   RooFitResult *pow3_fit = gauxpow3.fitTo(data,Range("window"),Save(kTRUE));
@@ -217,9 +221,9 @@ void testturn()
   fout->cd();
   ws->Write();
   fout->Close();
-  RooPlot* xframe1  = mH.frame() ;
-  mH.setRange("blind1",100,120) ;
-  mH.setRange("blind2",130,180);
+  RooPlot* xframe1  = CMS_hzg_mass.frame() ;
+  CMS_hzg_mass.setRange("blind1",100,120) ;
+  CMS_hzg_mass.setRange("blind2",130,180);
   data.plotOn(xframe1,Binning(80),CutRange("blind1"),RooFit::Name("data")) ;
   data.plotOn(xframe1,Binning(80),CutRange("blind2")) ;
   // gauxpow1.plotOn(xframe1,RooFit::Name("gauxpow1"));
