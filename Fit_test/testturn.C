@@ -10,7 +10,7 @@
 #include "boost/algorithm/string/split.hpp"
 #include "boost/algorithm/string/classification.hpp"
 #include "boost/algorithm/string/predicate.hpp"
-#include "/data3/mingyan/CMSSW_7_4_7/src/HiggsAnalysis/CombinedLimit/interface/RooMultiPdf.h"
+#include "HiggsAnalysis/CombinedLimit/interface/RooMultiPdf.h"
 //#include "boost/program_options.hpp"                                                                             
 #include "boost/lexical_cast.hpp"
 #include <RooGaussModel.h>
