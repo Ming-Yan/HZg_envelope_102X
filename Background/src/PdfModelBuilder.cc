@@ -25,7 +25,9 @@
 #include "../interface/PdfModelBuilder.h"
 
 #include "HiggsAnalysis/CombinedLimit/interface/HGGRooPdfs.h"
+#include "HiggsAnalysis/CombinedLimit/interface/HZGRooPdfs.h"
 #include "HiggsAnalysis/CombinedLimit/interface/RooBernsteinFast.h"
+
 
 using namespace std;
 using namespace RooFit;
@@ -47,7 +49,10 @@ PdfModelBuilder::PdfModelBuilder():
   recognisedPdfTypes.push_back("Laurent");
   recognisedPdfTypes.push_back("KeysPdf");
   recognisedPdfTypes.push_back("File");
-
+  recognisedPdfTypes.push_back("BernsteinStepxGau");
+  recognisedPdfTypes.push_back("PowerLawStepxGau");
+  recognisedPdfTypes.push_back("LaurentStepxGau");
+  recognisedPdfTypes.push_back("ExponentialStepxGau");
   wsCache = new RooWorkspace("PdfModelBuilderCache");
 
 };
@@ -92,6 +97,48 @@ RooAbsPdf* PdfModelBuilder::getChebychev(string prefix, int order){
 }
 
 RooAbsPdf* PdfModelBuilder::getBernstein(string prefix, int order){
+  
+  RooArgList *coeffList = new RooArgList();
+  //coeffList->add(RooConst(1.0)); // no need for cnstant in this interface
+  for (int i=0; i<order; i++){
+    string name = Form("%s_p%d",prefix.c_str(),i);
+    //params.insert(pair<string,RooRealVar*>(name, new RooRealVar(name.c_str(),name.c_str(),1.0,0.,5.)));
+    RooRealVar *param = new RooRealVar(name.c_str(),name.c_str(),0.1*(i+1),-5.,5.);
+    RooFormulaVar *form = new RooFormulaVar(Form("%s_sq",name.c_str()),Form("%s_sq",name.c_str()),"@0*@0",RooArgList(*param));
+    params.insert(pair<string,RooRealVar*>(name,param));
+    prods.insert(pair<string,RooFormulaVar*>(name,form));
+    coeffList->add(*prods[name]);
+  }
+  //RooBernstein *bern = new RooBernstein(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+  if (order==1) {
+	RooBernsteinFast<1> *bern = new RooBernsteinFast<1>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+  	return bern;
+  } else if (order==2) {
+	RooBernsteinFast<2> *bern = new RooBernsteinFast<2>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+  	return bern;
+  } else if (order==3) {
+	RooBernsteinFast<3> *bern = new RooBernsteinFast<3>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+  	return bern;
+  } else if (order==4) {
+	RooBernsteinFast<4> *bern = new RooBernsteinFast<4>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+  	return bern;
+  } else if (order==5) {
+	RooBernsteinFast<5> *bern = new RooBernsteinFast<5>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+  	return bern;
+  } else if (order==6) {
+	RooBernsteinFast<6> *bern = new RooBernsteinFast<6>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+  	return bern;
+//  } else if (order==7) {
+//	RooBernsteinFast<7> *bern = new RooBernsteinFast<7>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+ // 	return bern;
+  } else {
+	return NULL;
+  }
+  //return bern;
+  //bkgPdfs.insert(pair<string,RooAbsPdf*>(bern->GetName(),bern));
+
+}
+RooAbsPdf* PdfModelBuilder::getBernsteinStepxGau(string prefix, int order){
   
   RooArgList *coeffList = new RooArgList();
   //coeffList->add(RooConst(1.0)); // no need for cnstant in this interface
