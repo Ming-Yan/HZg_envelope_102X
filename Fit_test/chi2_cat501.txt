@@ -1,0 +1,14 @@
+Functions	ndf	chi2/ndf
+bern2	6	3.94411
+bern3	7	3.9623
+bern4	8	3.97631
+bern5	9	3.99435
+gauxexp1	5	3.93038
+gauxexp3	7	3.9501
+gauxexp5	9	3.93797
+gauxlau1	5	3.67675
+gauxlau2	6	3.6875
+gauxlau3	7	3.72294
+gauxpow1	5	3.90955
+gauxpow3	7	3.88532
+gauxpow5	9	3.95044

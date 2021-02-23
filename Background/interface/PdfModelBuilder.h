@@ -63,6 +63,10 @@ class PdfModelBuilder {
     RooAbsPdf* getExponential(string prefix, int order);
     RooAbsPdf* getExponentialSingle(string prefix, int order);
     RooAbsPdf* getLaurentSeries(string prefix, int order);
+    RooAbsPdf* getBernsteinStepxGau(string prefix, int order);
+    RooAbsPdf* getPowerLawStepxGau(string prefix, int order);
+    RooAbsPdf* getExponentialStepxGau(string prefix, int order);
+    RooAbsPdf* getLaurentStepxGau(string prefix, int order);
     RooAbsPdf* getKeysPdf(string prefix);
     RooAbsPdf* getPdfFromFile(string &prefix);
 

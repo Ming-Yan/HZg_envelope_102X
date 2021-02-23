@@ -37,12 +37,12 @@
 namespace std {} using namespace std;
 
 // Header files passed as explicit arguments
-#include "/afs/cern.ch/user/m/milee/CMSSW_10_2_13/src/flashggFinalFit/Background/interface/RooPowerLawSum.h"
-#include "/afs/cern.ch/user/m/milee/CMSSW_10_2_13/src/flashggFinalFit/Background/interface/WSTFileWrapper.h"
-#include "/afs/cern.ch/user/m/milee/CMSSW_10_2_13/src/flashggFinalFit/Background/interface/RooExponentialSum.h"
-#include "/afs/cern.ch/user/m/milee/CMSSW_10_2_13/src/flashggFinalFit/Background/interface/RooPowerLaw.h"
-#include "/afs/cern.ch/user/m/milee/CMSSW_10_2_13/src/flashggFinalFit/Background/interface/ProfileMultiplePdfs.h"
-#include "/afs/cern.ch/user/m/milee/CMSSW_10_2_13/src/flashggFinalFit/Background/interface/PdfModelBuilder.h"
+#include "/afs/cern.ch/work/m/milee/HZg_envelope_102X/Background/interface/RooPowerLawSum.h"
+#include "/afs/cern.ch/work/m/milee/HZg_envelope_102X/Background/interface/WSTFileWrapper.h"
+#include "/afs/cern.ch/work/m/milee/HZg_envelope_102X/Background/interface/RooExponentialSum.h"
+#include "/afs/cern.ch/work/m/milee/HZg_envelope_102X/Background/interface/RooPowerLaw.h"
+#include "/afs/cern.ch/work/m/milee/HZg_envelope_102X/Background/interface/ProfileMultiplePdfs.h"
+#include "/afs/cern.ch/work/m/milee/HZg_envelope_102X/Background/interface/PdfModelBuilder.h"
 
 // Header files passed via #pragma extra_include
 
@@ -445,7 +445,7 @@ namespace {
     static const char* includePaths[] = {
 "/cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.12.07-gnimlf5//include",
 "/cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.12.07-gnimlf5/include",
-"/afs/cern.ch/user/m/milee/CMSSW_10_2_13/src/flashggFinalFit/Background/",
+"/afs/cern.ch/work/m/milee/HZg_envelope_102X/Background/",
 0
     };
     static const char* fwdDeclCode = R"DICTFWDDCLS(

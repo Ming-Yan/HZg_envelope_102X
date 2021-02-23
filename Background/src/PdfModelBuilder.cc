@@ -140,45 +140,39 @@ RooAbsPdf* PdfModelBuilder::getBernstein(string prefix, int order){
 }
 RooAbsPdf* PdfModelBuilder::getBernsteinStepxGau(string prefix, int order){
   
+  RooRealVar *mean = new RooRealVar(Form("%s_mean",prefix.c_str()),Form("%s_mean",prefix.c_str()),0.);
+  RooRealVar *sigma = new RooRealVar(Form("%s_sigma_b%d",prefix.c_str(),order),Form("%s_sigma_b%d",prefix.c_str(),order),3,0.1,10);
+  RooRealVar *step = new RooRealVar(Form("step_b%d",order),Form("step_b%d",order),105,90,120);
   RooArgList *coeffList = new RooArgList();
   //coeffList->add(RooConst(1.0)); // no need for cnstant in this interface
+  
   for (int i=0; i<order; i++){
-    string name = Form("%s_p%d",prefix.c_str(),i);
+    string name = Form("%s_b%d",prefix.c_str(),i);
     //params.insert(pair<string,RooRealVar*>(name, new RooRealVar(name.c_str(),name.c_str(),1.0,0.,5.)));
-    RooRealVar *param = new RooRealVar(name.c_str(),name.c_str(),0.1*(i+1),-5.,5.);
-    RooFormulaVar *form = new RooFormulaVar(Form("%s_sq",name.c_str()),Form("%s_sq",name.c_str()),"@0*@0",RooArgList(*param));
+    RooRealVar *param = new RooRealVar(name.c_str(),name.c_str(),0.3,-5.,5.);
     params.insert(pair<string,RooRealVar*>(name,param));
-    prods.insert(pair<string,RooFormulaVar*>(name,form));
-    coeffList->add(*prods[name]);
+    coeffList->add(*params[name]);
   }
   //RooBernstein *bern = new RooBernstein(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
   if (order==1) {
-	RooBernsteinFast<1> *bern = new RooBernsteinFast<1>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
-  	return bern;
+  RooGaussStepBernstein *bern =new RooGaussStepBernstein(prefix.c_str(),prefix.c_str(),*obs_var,*mean,*sigma,*step, *coeffList);
+    	return bern;
   } else if (order==2) {
-	RooBernsteinFast<2> *bern = new RooBernsteinFast<2>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+    RooGaussStepBernstein *bern =new RooGaussStepBernstein(prefix.c_str(),prefix.c_str(),*obs_var,*mean,*sigma,*step, *coeffList);
   	return bern;
   } else if (order==3) {
-	RooBernsteinFast<3> *bern = new RooBernsteinFast<3>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+    RooGaussStepBernstein *bern =new RooGaussStepBernstein(prefix.c_str(),prefix.c_str(),*obs_var,*mean,*sigma,*step, *coeffList);
   	return bern;
   } else if (order==4) {
-	RooBernsteinFast<4> *bern = new RooBernsteinFast<4>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+    RooGaussStepBernstein *bern =new RooGaussStepBernstein(prefix.c_str(),prefix.c_str(),*obs_var,*mean,*sigma,*step, *coeffList);
   	return bern;
   } else if (order==5) {
-	RooBernsteinFast<5> *bern = new RooBernsteinFast<5>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
+    RooGaussStepBernstein *bern =new RooGaussStepBernstein(prefix.c_str(),prefix.c_str(),*obs_var,*mean,*sigma,*step, *coeffList);
   	return bern;
-  } else if (order==6) {
-	RooBernsteinFast<6> *bern = new RooBernsteinFast<6>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
-  	return bern;
-//  } else if (order==7) {
-//	RooBernsteinFast<7> *bern = new RooBernsteinFast<7>(prefix.c_str(),prefix.c_str(),*obs_var,*coeffList);
- // 	return bern;
-  } else {
+  } 
+   else {
 	return NULL;
   }
-  //return bern;
-  //bkgPdfs.insert(pair<string,RooAbsPdf*>(bern->GetName(),bern));
-
 }
 
 RooAbsPdf* PdfModelBuilder::getPowerLawGeneric(string prefix, int order){
