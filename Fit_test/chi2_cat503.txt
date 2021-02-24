@@ -1,8 +1,8 @@
 Functions	ndf	chi2/ndf
 bern2	6	446.824
 bern3	7	436.674
-bern4	8	440.304
-bern5	9	451.752
+bern4	8	431.317
+bern5	9	430.987
 gauxexp1	5	424.15
 gauxexp3	7	426.805
 gauxexp5	9	429.57
