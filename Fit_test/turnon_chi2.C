@@ -110,10 +110,10 @@ void turnon_chi2(int cat)
   // RooRealVar p1_pow1("p1_pow1","p1_pow1",-6.3453,-10,-5.);
   // RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",3.3018e-02 ,0.0,1.);
   //cat501
-  // RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",6.,0.1,10);
-  // RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",108,106,109);
-  // RooRealVar p1_pow1("p1_pow1","p1_pow1",-5.6,-15,-5.);
-  // RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.0002 ,0.0,1.);
+  RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",6.,0.1,10);
+  RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",108,106,109);
+  RooRealVar p1_pow1("p1_pow1","p1_pow1",-5.6,-15,-5.);
+  RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.0002 ,0.0,1.);
   //cat502
   // RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",6.,0.1,10);
   // RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",104.6,104,105);
@@ -125,10 +125,10 @@ void turnon_chi2(int cat)
   // RooRealVar p1_pow1("p1_pow1","p1_pow1",-5.2,-8,-1.);
   // RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.001,0.000001,1.);
   //cat6789
-  RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",4.95,1.,8.);
-  RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",105.7,104,106);
-  RooRealVar p1_pow1("p1_pow1","p1_pow1",-4.,-8,-1.);
-  RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.001,0.000001,1.);
+  // RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",4.95,1.,8.);
+  // RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",105.7,104,106);
+  // RooRealVar p1_pow1("p1_pow1","p1_pow1",-4.,-8,-1.);
+  // RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.001,0.000001,1.);
   //cat1
   // RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",6.6041,3.,8.);
   // RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",108.2,107,109);
@@ -158,12 +158,12 @@ void turnon_chi2(int cat)
   // RooRealVar p3_pow3("p3_pow3","p3_pow3",-4.267,-8.,-2.);
   // RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",1.1001e-06,0,1.);
   //cat501
-  // RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",8.505,3.,10);
-  // RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",108,107,109);
-  // RooRealVar p1_pow3("p1_pow3","p1_pow3",-6.4708,-10,-2.);
-  // RooRealVar cp1_pow3("cp1_pow3","cp1_pow3",8.4306e-01,0.,1.);
-  // RooRealVar p3_pow3("p3_pow3","p3_pow3",-6.1246,-8.,-2.);
-  // RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",1.4141e-06,0,1.);
+  RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",8.505,3.,10);
+  RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",108,107,109);
+  RooRealVar p1_pow3("p1_pow3","p1_pow3",-6.4708,-10,-2.);
+  RooRealVar cp1_pow3("cp1_pow3","cp1_pow3",8.4306e-01,0.,1.);
+  RooRealVar p3_pow3("p3_pow3","p3_pow3",-6.1246,-8.,-2.);
+  RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",1.4141e-06,0,1.);
   //cat502
   // RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",5.,3.,10);
   // RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",104.6,100,110);
@@ -179,12 +179,12 @@ void turnon_chi2(int cat)
   // RooRealVar p3_pow3("p3_pow3","p3_pow3",-4,-5.,-1.);
   // RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",0.01,0,1.);
   //cat6789
-  RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",4.8,3.,6.);
-  RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",105.7,104,107);
-  RooRealVar p1_pow3("p1_pow3","p1_pow3",-6.1,-10.,-1.);
-  RooRealVar cp1_pow3("cp1_pow3","cp1_pow3",1.e-06,0.,1.);
-  RooRealVar p3_pow3("p3_pow3","p3_pow3",-3.0,-6.,-1.);
-  RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",0.81,0,1.);
+  // RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",4.8,3.,6.);
+  // RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",105.7,104,107);
+  // RooRealVar p1_pow3("p1_pow3","p1_pow3",-6.1,-10.,-1.);
+  // RooRealVar cp1_pow3("cp1_pow3","cp1_pow3",1.e-06,0.,1.);
+  // RooRealVar p3_pow3("p3_pow3","p3_pow3",-3.0,-6.,-1.);
+  // RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",0.81,0,1.);
   //cat1
   // RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",6,3.,10);
   // RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",108,107,109);
@@ -222,14 +222,14 @@ void turnon_chi2(int cat)
   // RooRealVar p5_pow5("p5_pow5","p5_pow5",-6.3,-8.,-3.);
   // RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",2.0522e-02,0.0,1.);
   //cat501
-  // RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",6,3.,10);
-  // RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",108,107,109);
-  // RooRealVar p1_pow5("p1_pow5","p1_pow5",-9,-15,-5);
-  // RooRealVar cp1_pow5("cp1_pow5","cp1_pow5",0.04,0.,1.);
-  // RooRealVar p3_pow5("p3_pow5","p3_pow5",-7.,-10.,-2.);
-  // RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",0.1,0,1.);
-  // RooRealVar p5_pow5("p5_pow5","p5_pow5",-5.6,-10.,-1.);
-  // RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.001,0.001,1.);
+  RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",6,3.,10);
+  RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",108,107,109);
+  RooRealVar p1_pow5("p1_pow5","p1_pow5",-9,-15,-5);
+  RooRealVar cp1_pow5("cp1_pow5","cp1_pow5",0.04,0.,1.);
+  RooRealVar p3_pow5("p3_pow5","p3_pow5",-7.,-10.,-2.);
+  RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",0.1,0,1.);
+  RooRealVar p5_pow5("p5_pow5","p5_pow5",-5.6,-10.,-1.);
+  RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.001,0.001,1.);
   //cat502
   // RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",6,3.,10);
   // RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",104.6,100,110);
@@ -249,14 +249,14 @@ void turnon_chi2(int cat)
   // RooRealVar p5_pow5("p5_pow5","p5_pow5",-4,-10.,-1.);
   // RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.0001,0.001,1.);
   //cat6789
-  RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",4.95,3.,10);
-  RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",105.9,104,107);
-  RooRealVar p1_pow5("p1_pow5","p1_pow5",-6.2,-12,-4);
-  RooRealVar cp1_pow5("cp1_pow5","cp1_pow5",0.5,0.,1.);
-  RooRealVar p3_pow5("p3_pow5","p3_pow5",-3.,-10.,0.);
-  RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",0.37,0,1.);
-  RooRealVar p5_pow5("p5_pow5","p5_pow5",-3.8,-10.,0.);
-  RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.5,0.0,1.);
+  // RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",4.95,3.,10);
+  // RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",105.9,104,107);
+  // RooRealVar p1_pow5("p1_pow5","p1_pow5",-6.2,-12,-4);
+  // RooRealVar cp1_pow5("cp1_pow5","cp1_pow5",0.5,0.,1.);
+  // RooRealVar p3_pow5("p3_pow5","p3_pow5",-3.,-10.,0.);
+  // RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",0.37,0,1.);
+  // RooRealVar p5_pow5("p5_pow5","p5_pow5",-3.8,-10.,0.);
+  // RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.5,0.0,1.);
 
   RooGenericPdf step_pow1("step_pow1", "step_pow1", "1e-20+(@0 > @1)*(@3*(@0)^(@2))", RooArgList(CMS_hzg_mass,turnon_pow1,p1_pow1,cp1_pow1));//step*(ax^b)
   RooGenericPdf step_pow3("step_pow3", "step_pow3", "1e-20+(@0 > @1)*(@3*(@0)^(@2)+@5*(@0)^(@4))", RooArgList(CMS_hzg_mass,turnon_pow3,p1_pow3,cp1_pow3,p3_pow3,cp3_pow3));//step*(ax^b+cx^d)
@@ -290,10 +290,10 @@ void turnon_chi2(int cat)
   // RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",4.6222e-10,0.0,0.01);//untag
   // RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",4.2351e-01,0.,1.);
   //cat501
-  // RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",6,3.,10);
-  // RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",108,107,109);
-  // RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",0.000000001,0.0,1.);//untag
-  // RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",0.99999,0,1.);
+  RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",6,3.,10);
+  RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",108,107,109);
+  RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",0.000000001,0.0,1.);//untag
+  RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",0.99999,0,1.);
   //cat502
   // RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",6,3.,10);
   // RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",104.6,100,110);
@@ -305,10 +305,10 @@ void turnon_chi2(int cat)
   // RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",8.8602e-01,0.0,1.);//untag
   // RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",5.7348e-08,0,1.);
   //cat6789
-  RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",4.95,3.,6.);
-  RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",105.9,103,107);
-  RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",2.7933e-01,0.0,1.);//untag
-  RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",8.3706e-03,0,1.);
+  // RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",4.95,3.,6.);
+  // RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",105.9,103,107);
+  // RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",2.7933e-01,0.0,1.);//untag
+  // RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",8.3706e-03,0,1.);
   //cat1
   // RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",6,3.,10);
   // RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",108,107,109);
@@ -334,11 +334,11 @@ void turnon_chi2(int cat)
   // RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",9.5000e-01,0.9,1.0);
   // RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",1.0828e-07,0,0.1);
   //cat501
-  // RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",6,3.,10);
-  // RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",108,107,109);
-  // RooRealVar cl1_lau2("cl1_lau2","cl1_lau2",0.00000000001,0.,1.);
-  // RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",0.999999999,0.,1.);
-  // RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",0.0,0,1.);
+  RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",6,3.,10);
+  RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",108,107,109);
+  RooRealVar cl1_lau2("cl1_lau2","cl1_lau2",0.00000000001,0.,1.);
+  RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",0.999999999,0.,1.);
+  RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",0.0,0,1.);
   //cat502
   // RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",6,3.,10);
   // RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",104.6,100,110);
@@ -352,11 +352,11 @@ void turnon_chi2(int cat)
   // RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",0.95,0.,1.05);
   // RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",0.1,0,1.);
   //cat6789
-  RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",4.95,3.,6.);
-  RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",105.9,104,107);
-  RooRealVar cl1_lau2("cl1_lau2","cl1_lau2",1.7839e-06,0.,1.);
-  RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",0.95,0.,1.05);
-  RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",0.1,0,1.);
+  // RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",4.95,3.,6.);
+  // RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",105.9,104,107);
+  // RooRealVar cl1_lau2("cl1_lau2","cl1_lau2",1.7839e-06,0.,1.);
+  // RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",0.95,0.,1.05);
+  // RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",0.1,0,1.);
  
   //cat1
   // RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",6,3.,10);
@@ -387,12 +387,12 @@ void turnon_chi2(int cat)
   // RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",8.7939e-11,0,.0001);
   // RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",9.0697e-01,0.9,1.);
    //cat501
-  // RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",6,3.,10);
-  // RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",108,107,109);
-  // RooRealVar cl1_lau3("cl1_lau3","cl1_lau3",0.0000000001,0.,1.);
-  // RooRealVar cl2_lau3("cl2_lau3","cl2_lau3",0.0000001,0.,1.);
-  // RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",0.0,0,1.);
-  // RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",0.999999999,0,1.);
+  RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",6,3.,10);
+  RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",108,107,109);
+  RooRealVar cl1_lau3("cl1_lau3","cl1_lau3",0.0000000001,0.,1.);
+  RooRealVar cl2_lau3("cl2_lau3","cl2_lau3",0.0000001,0.,1.);
+  RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",0.0,0,1.);
+  RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",0.999999999,0,1.);
   // cat502
   // RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",6,3.,10);
   // RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",104.6,100,110);
@@ -408,12 +408,12 @@ void turnon_chi2(int cat)
   // RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",0.000001,0,1.);
   // RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",0.02,0,1.);
   //cat6789
-  RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",5.,3.,6.);
-  RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",106.,104,107);
-  RooRealVar cl1_lau3("cl1_lau3","cl1_lau3",3.0862e-02,0.,1.);
-  RooRealVar cl2_lau3("cl2_lau3","cl2_lau3",4.1937e-02,0.,1.);
-  RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",5.7030e-03,0,1.);
-  RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",7.5681e-01,0,1.);
+  // RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",5.,3.,6.);
+  // RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",106.,104,107);
+  // RooRealVar cl1_lau3("cl1_lau3","cl1_lau3",3.0862e-02,0.,1.);
+  // RooRealVar cl2_lau3("cl2_lau3","cl2_lau3",4.1937e-02,0.,1.);
+  // RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",5.7030e-03,0,1.);
+  // RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",7.5681e-01,0,1.);
   RooGenericPdf step_lau1("step_lau1", "step_lau1", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5))", RooArgList(CMS_hzg_mass,turnon_lau1,cl1_lau1,cl2_lau1));//step*(ax^b)
   RooGenericPdf step_lau2("step_lau2", "step_lau2", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5)+@4*(@0)^(-3))", RooArgList(CMS_hzg_mass,turnon_lau2,cl1_lau2,cl2_lau2,cl3_lau2));//step*(ax^b+cx^d+fx^g) 
   RooGenericPdf step_lau3("step_lau3", "step_lau3", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5)+@4*(@0)^(-3)+@5*(@0)^(-6))", RooArgList(CMS_hzg_mass,turnon_lau3,cl1_lau3,cl2_lau3,cl3_lau3,cl4_lau3));//step*(ax^b+cx^d)
@@ -447,10 +447,10 @@ void turnon_chi2(int cat)
   // RooRealVar p1_exp1("p1_exp1","p1_exp1",-4.8370e-02,-0.7,0.);
   // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",2.9940e-01,0,1.);
   //cat501
-  // RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5,3.,10);
-  // RooRealVar turnon_exp1("turnon_exp1","turnon_exp1", 108,107,109);
-  // RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.03,-0.7,0.);
-  // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.5,0,1.);
+  RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5,3.,10);
+  RooRealVar turnon_exp1("turnon_exp1","turnon_exp1", 108,107,109);
+  RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.03,-0.7,0.);
+  RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.5,0,1.);
   //cat502
   // RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5,3.,10);
   // RooRealVar turnon_exp1("turnon_exp1","turnon_exp1",104.6,100,110);
@@ -462,10 +462,10 @@ void turnon_chi2(int cat)
   // RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.03,-0.7,0.);
   // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.5,0,1.);
   //cat6789
-  RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5.0,5.,6.);
-  RooRealVar turnon_exp1("turnon_exp1","turnon_exp1", 106.9,105,107.5);
-  RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.0228,-0.7,0.);
-  RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.023,0,1.);
+  // RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5.0,5.,6.);
+  // RooRealVar turnon_exp1("turnon_exp1","turnon_exp1", 106.9,105,107.5);
+  // RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.0228,-0.7,0.);
+  // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.023,0,1.);
 
   //cat1
   // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",5.,3.,10);
@@ -496,12 +496,12 @@ void turnon_chi2(int cat)
   // RooRealVar p3_exp3("p3_exp3","p3_exp3",-6.5367e-02,-0.5,0.);
   // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",5.7985e-01,0,1.);
   //cat501
-  // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",8.104,6.,10);
-  // RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",108,107,109);
-  // RooRealVar p1_exp3("p1_exp3","p1_exp3",-4.6408e-02,-0.5,0.);
-  // RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",2.3801e-05,0.,1.);
-  // RooRealVar p3_exp3("p3_exp3","p3_exp3",-4.6408e-02,-0.5,0.);
-  // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",2.3053e-04,0,1.);
+  RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",8.104,6.,10);
+  RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",108,107,109);
+  RooRealVar p1_exp3("p1_exp3","p1_exp3",-4.6408e-02,-0.5,0.);
+  RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",2.3801e-05,0.,1.);
+  RooRealVar p3_exp3("p3_exp3","p3_exp3",-4.6408e-02,-0.5,0.);
+  RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",2.3053e-04,0,1.);
   //cat502
   // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",5.1,3.,10);
   // RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",104.6,100,110);
@@ -517,12 +517,12 @@ void turnon_chi2(int cat)
   // RooRealVar p3_exp3("p3_exp3","p3_exp3",-0.024,-0.1,0.);
   // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",1.1120e-06,0,1.);
   //cat6789
-  RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",4.95,3.,8.);
-  RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",105.9,104,107);
-  RooRealVar p1_exp3("p1_exp3","p1_exp3",-3.4369e-02,-0.5,0.);
-  RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",0.42,0.,1.);
-  RooRealVar p3_exp3("p3_exp3","p3_exp3",-1.8018e-02,-0.5,0.);
-  RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",0.10,0,1.);
+  // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",4.95,3.,8.);
+  // RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",105.9,104,107);
+  // RooRealVar p1_exp3("p1_exp3","p1_exp3",-3.4369e-02,-0.5,0.);
+  // RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",0.42,0.,1.);
+  // RooRealVar p3_exp3("p3_exp3","p3_exp3",-1.8018e-02,-0.5,0.);
+  // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",0.10,0,1.);
   
   //cat1
   // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.5,3.,10);
@@ -561,14 +561,14 @@ void turnon_chi2(int cat)
   // RooRealVar p5_exp5("p5_exp5","p5_exp5",-0.00001,-0.5,0.);
   // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",0.000001,0,1.);
   //cat501
-  // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.5,3.,10);
-  // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",108,107,109);
-  // RooRealVar p1_exp5("p1_exp5","p1_exp5",-1.8351e-01,-0.5,0.);
-  // RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",1.5511e-08,0.,1.);
-  // RooRealVar p3_exp5("p3_exp5","p3_exp5",-1.0083e-01 ,-0.5,0.);
-  // RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",7.9829e-04,0,1.);
-  // RooRealVar p5_exp5("p5_exp5","p5_exp5",-4.6365e-02,-0.5,0.);
-  // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",1.6977e-01,0,1.);
+  RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.5,3.,10);
+  RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",108,107,109);
+  RooRealVar p1_exp5("p1_exp5","p1_exp5",-1.8351e-01,-0.5,0.);
+  RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",1.5511e-08,0.,1.);
+  RooRealVar p3_exp5("p3_exp5","p3_exp5",-1.0083e-01 ,-0.5,0.);
+  RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",7.9829e-04,0,1.);
+  RooRealVar p5_exp5("p5_exp5","p5_exp5",-4.6365e-02,-0.5,0.);
+  RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",1.6977e-01,0,1.);
   //cat502
   // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.5,3.,10);
   // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",104.6,100,110);
@@ -588,14 +588,14 @@ void turnon_chi2(int cat)
   // RooRealVar p5_exp5("p5_exp5","p5_exp5",-0.00001,-0.5,0.);
   // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",0.000001,0,1.);
   //cat6789
-  RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.,3.,7.);
-  RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",106,104,106.5);
-  RooRealVar p1_exp5("p1_exp5","p1_exp5",-0.035,-0.6,0.);
-  RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",0.4,0.,1.);
-  RooRealVar p3_exp5("p3_exp5","p3_exp5",-0.02,-0.5,0.);
-  RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",0.1,0,1.);
-  RooRealVar p5_exp5("p5_exp5","p5_exp5",-0.01,-0.5,0.);
-  RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",0.002,0,1.);
+  // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.,3.,7.);
+  // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",106,104,106.5);
+  // RooRealVar p1_exp5("p1_exp5","p1_exp5",-0.035,-0.6,0.);
+  // RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",0.4,0.,1.);
+  // RooRealVar p3_exp5("p3_exp5","p3_exp5",-0.02,-0.5,0.);
+  // RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",0.1,0,1.);
+  // RooRealVar p5_exp5("p5_exp5","p5_exp5",-0.01,-0.5,0.);
+  // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",0.002,0,1.);
   RooGenericPdf step_exp1("step_exp1", "step_exp1", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2))", RooArgList(CMS_hzg_mass,turnon_exp1,p1_exp1,cp1_exp1));//step*(ax^b)
   RooGenericPdf step_exp3("step_exp3", "step_exp3", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2)+@5*TMath::Exp(@0*@4))", RooArgList(CMS_hzg_mass,turnon_exp3,p1_exp3,cp1_exp3,p3_exp3,cp3_exp3));//step*(ax^b+cx^d)
   RooGenericPdf step_exp5("step_exp5", "step_exp5", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2)+@5*TMath::Exp(@0*@4)+@7*TMath::Exp(@0*@6))", RooArgList(CMS_hzg_mass,turnon_exp5,p1_exp5,cp1_exp5,p3_exp5,cp3_exp5,p5_exp5,cp5_exp5));//step*(ax^b+cx^d+fx^g)
@@ -684,6 +684,10 @@ void turnon_chi2(int cat)
   ws->import(data);
   fout->cd();
   ws->Write();
+  bern2_fit->Write(); bern3_fit->Write(); bern4_fit->Write(); bern5_fit->Write();
+  exp1_fit->Write(); exp3_fit->Write(); exp5_fit->Write();
+  pow1_fit->Write(); pow3_fit->Write(); pow5_fit->Write();
+  lau1_fit->Write(); lau2_fit->Write(); lau3_fit->Write();
   fout->Close();
   RooPlot* xframe1  = CMS_hzg_mass.frame() ;
   CMS_hzg_mass.setRange("blind1",100,120) ;

@@ -49,7 +49,7 @@ void getchi2(int cat)
         "gauxlau1", "gauxlau2", "gauxlau3",
         "gauxpow1", "gauxpow3", "gauxpow5"
       };
-    
+    //w->Print(); 
     RooRealVar *CMS_hzg_mass = (RooRealVar*) w->var("CMS_hzg_mass");
     // CMS_hzg_mass.setBins(320);
     RooPlot* xframe1  = CMS_hzg_mass->frame() ;
@@ -58,10 +58,10 @@ void getchi2(int cat)
     ofstream outtxt(Form("chi2_cat%d.txt",cat));
     cout<<"====> "<<cat<<" <===="<<endl;
     outtxt<<"Functions\tndf\tchi2/ndf"<<endl;
-    for(int i = 0; i < 14; i++)
+    for(int i = 1; i < 14; i++)
       {
         RooAbsPdf *pdf = (RooAbsPdf*)w->pdf(catname[i].c_str());
-        // pdf->Print();
+	///pdf->Print();
         data->plotOn(xframe1,Binning(320),RooFit::Name("data")) ;
         int np = pdf->getParameters(data)->getSize();
         RooRealVar norm("norm","norm",data->sumEntries(),0,10E6);
@@ -70,5 +70,5 @@ void getchi2(int cat)
         double chi2 = xframe1->chiSquare(catname[i].c_str(),"data",np);
         cout<<catname[i].c_str()<<" "<<chi2<<endl;
         outtxt<<catname[i].c_str()<<"\t"<<np<<"\t"<<chi2<<endl;
-      }
+	}
 }
