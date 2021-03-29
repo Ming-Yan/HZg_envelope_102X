@@ -1,0 +1,107 @@
+imax 1   number of channels
+jmax *   number of process minus 1
+kmax *   number of nuisance parameters (sources of systematic uncertainty)
+--------------------------------------------------------------------------
+shapes bgr        cat4  turnon_cat4.root  multipdf:CMS_hzg_bkgshape
+shapes data_obs   cat4    binned280_cat4.root  multipdf:datahist_ele_mu_cat4_2020
+shapes ggH_hzg_16_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/WS_Legacy16_ptwei_ele_ggF_4_125_2016.root :newPdf_ele_ggF_m125_cat4_2016
+shapes qqH_hzg_16_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/WS_Legacy16_ptwei_ele_VBF_4_125_2016.root :newPdf_ele_VBF_m125_cat4_2016
+shapes ttH_hzg_16_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/WS_Legacy16_ptwei_ele_ggF_4_125_2016.root :newPdf_ele_ggF_m125_cat4_2016
+shapes ZH_hzg_16_ele        cat4     /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/WS_Legacy16_ptwei_ele_ggF_4_125_2016.root :newPdf_ele_ggF_m125_cat4_2016
+shapes WH_hzg_16_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/WS_Legacy16_ptwei_ele_ggF_4_125_2016.root :newPdf_ele_ggF_m125_cat4_2016
+shapes ggH_hzg_16_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/WS_Legacy16_ptwei_mu_ggF_4_125_2016.root :newPdf_mu_ggF_m125_cat4_2016
+shapes qqH_hzg_16_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/WS_Legacy16_ptwei_mu_VBF_4_125_2016.root :newPdf_mu_VBF_m125_cat4_2016
+shapes ttH_hzg_16_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/WS_Legacy16_ptwei_mu_ggF_4_125_2016.root :newPdf_mu_ggF_m125_cat4_2016
+shapes ZH_hzg_16_mu        cat4     /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/WS_Legacy16_ptwei_mu_ggF_4_125_2016.root :newPdf_mu_ggF_m125_cat4_2016
+shapes WH_hzg_16_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/WS_Legacy16_ptwei_mu_ggF_4_125_2016.root :newPdf_mu_ggF_m125_cat4_2016
+shapes bkg_ggH_hmm_16        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/bkg_WS_Legacy16_ptwei_mu_ggF_4_125_2016.root :newPdf_bkg_mu_ggF_m125_cat4_2016
+shapes bkg_qqH_hmm_16        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/bkg_WS_Legacy16_ptwei_mu_VBF_4_125_2016.root :newPdf_bkg_mu_VBF_m125_cat4_2016
+shapes bkg_ttH_hmm_16        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/bkg_WS_Legacy16_ptwei_mu_ggF_4_125_2016.root :newPdf_bkg_mu_ggF_m125_cat4_2016
+shapes bkg_ZH_hmm_16        cat4     /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/bkg_WS_Legacy16_ptwei_mu_ggF_4_125_2016.root :newPdf_bkg_mu_ggF_m125_cat4_2016
+shapes bkg_WH_hmm_16        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Legacy16_ptwei_updateturnon/bkg_WS_Legacy16_ptwei_mu_ggF_4_125_2016.root :newPdf_bkg_mu_ggF_m125_cat4_2016
+shapes ggH_hzg_17_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/WS_Rereco17_ptwei_ele_ggF_4_125_2017.root :newPdf_ele_ggF_m125_cat4_2017
+shapes qqH_hzg_17_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/WS_Rereco17_ptwei_ele_VBF_4_125_2017.root :newPdf_ele_VBF_m125_cat4_2017
+shapes ttH_hzg_17_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/WS_Rereco17_ptwei_ele_ggF_4_125_2017.root :newPdf_ele_ggF_m125_cat4_2017
+shapes ZH_hzg_17_ele        cat4     /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/WS_Rereco17_ptwei_ele_ggF_4_125_2017.root :newPdf_ele_ggF_m125_cat4_2017
+shapes WH_hzg_17_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/WS_Rereco17_ptwei_ele_ggF_4_125_2017.root :newPdf_ele_ggF_m125_cat4_2017
+shapes ggH_hzg_17_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/WS_Rereco17_ptwei_mu_ggF_4_125_2017.root :newPdf_mu_ggF_m125_cat4_2017
+shapes qqH_hzg_17_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/WS_Rereco17_ptwei_mu_VBF_4_125_2017.root :newPdf_mu_VBF_m125_cat4_2017
+shapes ttH_hzg_17_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/WS_Rereco17_ptwei_mu_ggF_4_125_2017.root :newPdf_mu_ggF_m125_cat4_2017
+shapes ZH_hzg_17_mu        cat4     /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/WS_Rereco17_ptwei_mu_ggF_4_125_2017.root :newPdf_mu_ggF_m125_cat4_2017
+shapes WH_hzg_17_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/WS_Rereco17_ptwei_mu_ggF_4_125_2017.root :newPdf_mu_ggF_m125_cat4_2017
+shapes bkg_ggH_hmm_17        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/bkg_WS_Rereco17_ptwei_mu_ggF_4_125_2017.root :newPdf_bkg_mu_ggF_m125_cat4_2017
+shapes bkg_qqH_hmm_17        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/bkg_WS_Rereco17_ptwei_mu_VBF_4_125_2017.root :newPdf_bkg_mu_VBF_m125_cat4_2017
+shapes bkg_ttH_hmm_17        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/bkg_WS_Rereco17_ptwei_mu_ggF_4_125_2017.root :newPdf_bkg_mu_ggF_m125_cat4_2017
+shapes bkg_ZH_hmm_17        cat4     /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/bkg_WS_Rereco17_ptwei_mu_ggF_4_125_2017.root :newPdf_bkg_mu_ggF_m125_cat4_2017
+shapes bkg_WH_hmm_17        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco17_ptwei_updateturnon/bkg_WS_Rereco17_ptwei_mu_ggF_4_125_2017.root :newPdf_bkg_mu_ggF_m125_cat4_2017
+shapes ggH_hzg_18_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/WS_Rereco18_ptwei_ele_ggF_4_125_2018.root :newPdf_ele_ggF_m125_cat4_2018
+shapes qqH_hzg_18_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/WS_Rereco18_ptwei_ele_VBF_4_125_2018.root :newPdf_ele_VBF_m125_cat4_2018
+shapes ttH_hzg_18_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/WS_Rereco18_ptwei_ele_ggF_4_125_2018.root :newPdf_ele_ggF_m125_cat4_2018
+shapes ZH_hzg_18_ele        cat4     /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/WS_Rereco18_ptwei_ele_ggF_4_125_2018.root :newPdf_ele_ggF_m125_cat4_2018
+shapes WH_hzg_18_ele        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/WS_Rereco18_ptwei_ele_ggF_4_125_2018.root :newPdf_ele_ggF_m125_cat4_2018
+shapes ggH_hzg_18_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/WS_Rereco18_ptwei_mu_ggF_4_125_2018.root :newPdf_mu_ggF_m125_cat4_2018
+shapes qqH_hzg_18_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/WS_Rereco18_ptwei_mu_VBF_4_125_2018.root :newPdf_mu_VBF_m125_cat4_2018
+shapes ttH_hzg_18_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/WS_Rereco18_ptwei_mu_ggF_4_125_2018.root :newPdf_mu_ggF_m125_cat4_2018
+shapes ZH_hzg_18_mu        cat4     /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/WS_Rereco18_ptwei_mu_ggF_4_125_2018.root :newPdf_mu_ggF_m125_cat4_2018
+shapes WH_hzg_18_mu        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/WS_Rereco18_ptwei_mu_ggF_4_125_2018.root :newPdf_mu_ggF_m125_cat4_2018
+shapes bkg_ggH_hmm_18        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/bkg_WS_Rereco18_ptwei_mu_ggF_4_125_2018.root :newPdf_bkg_mu_ggF_m125_cat4_2018
+shapes bkg_qqH_hmm_18        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/bkg_WS_Rereco18_ptwei_mu_VBF_4_125_2018.root :newPdf_bkg_mu_VBF_m125_cat4_2018
+shapes bkg_ttH_hmm_18        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/bkg_WS_Rereco18_ptwei_mu_ggF_4_125_2018.root :newPdf_bkg_mu_ggF_m125_cat4_2018
+shapes bkg_ZH_hmm_18        cat4     /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/bkg_WS_Rereco18_ptwei_mu_ggF_4_125_2018.root :newPdf_bkg_mu_ggF_m125_cat4_2018
+shapes bkg_WH_hmm_18        cat4    /afs/cern.ch/work/m/milee/MYcode/limit/PDFs/Rereco18_ptwei_updateturnon/bkg_WS_Rereco18_ptwei_mu_ggF_4_125_2018.root :newPdf_bkg_mu_ggF_m125_cat4_2018
+--------------------------------------------------------------------------
+bin               cat4
+observation       -1
+--------------------------------------------------------------------------
+bin	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4	cat4
+process	ggH_hzg_16_ele	qqH_hzg_16_ele	ttH_hzg_16_ele	ZH_hzg_16_ele	WH_hzg_16_ele	ggH_hzg_16_mu	qqH_hzg_16_mu	ttH_hzg_16_mu	ZH_hzg_16_mu	WH_hzg_16_mu	ggH_hzg_17_ele	qqH_hzg_17_ele	ttH_hzg_17_ele	ZH_hzg_17_ele	WH_hzg_17_ele	ggH_hzg_17_mu	qqH_hzg_17_mu	ttH_hzg_17_mu	ZH_hzg_17_mu	WH_hzg_17_mu	ggH_hzg_18_ele	qqH_hzg_18_ele	ttH_hzg_18_ele	ZH_hzg_18_ele	WH_hzg_18_ele	ggH_hzg_18_mu	qqH_hzg_18_mu	ttH_hzg_18_mu	ZH_hzg_18_mu	WH_hzg_18_mu		bkg_ggH_hmm_16	bkg_qqH_hmm_16	bkg_ttH_hmm_16	bkg_ZH_hmm_16	bkg_WH_hmm_16		bkg_ggH_hmm_17	bkg_qqH_hmm_17	bkg_ttH_hmm_17	bkg_ZH_hmm_17	bkg_WH_hmm_17		bkg_ggH_hmm_18	bkg_qqH_hmm_18	bkg_ttH_hmm_18	bkg_ZH_hmm_18	bkg_WH_hmm_18	bgr
+process	-29	-28	-27	-26	-25	-24	-23	-22	-21	-20	-19	-18	-17	-16	-15	-14	-13	-12	-11	-10	-9	-8	-7	-6	-5	-4	-3	-2	-1	0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16
+rate	6.377059	0.145321	0.000186	0.032946	0.044496	7.951435	0.175344	0.000228	0.038975	0.053919	6.817546	0.165501	0.000236	0.036610	0.051603	9.801681	0.238318	0.000336	0.052871	0.070472	10.298072	0.223007	0.000187	0.052033	0.077602	12.640721	0.275269	0.000093	0.055487	0.084286		0.412424	0.007490	0.000081	0.003922	0.008381		0.412424	0.007490	0.000081	0.003922	0.008381		0.503372	0.019088	0.000150	0.005249	0.009601	1.000000
+--------------------------------------------------------------------------
+BR_hzg	lnN	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	0.943/1.057	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+BR_hmm	lnN	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-		0.9877/1.0123	0.9877/1.0123	0.9877/1.0123	0.9877/1.0123	0.9877/1.0123		0.9877/1.0123	0.9877/1.0123	0.9877/1.0123	0.9877/1.0123	0.9877/1.0123		0.9877/1.0123	0.9877/1.0123	0.9877/1.0123	0.9877/1.0123	0.9877/1.0123	-
+QCDscale_VH   		lnN		-	-	-	1.038/0.969	1.005/0.993			-	-	-	1.038/0.969	1.005/0.993			-	-	-	1.038/0.969	1.005/0.993			-	-	-	1.038/0.969	1.005/0.993			-	-	-	1.038/0.969	1.005/0.993			-	-	-	1.038/0.969	1.005/0.993			-	-	-	1.038/0.969	1.005/0.993			-	-	-	1.038/0.969	1.005/0.993			-	-	-	1.038/0.969	1.005/0.993		-
+QCDscale_ggH		lnN		1.045/0.933	-	-	-	-			1.045/0.933	-	-	-	-			1.045/0.933	-	-	-	-			1.045/0.933	-	-	-	-			1.045/0.933	-	-	-	-			1.045/0.933	-	-	-	-			1.045/0.933	-	-	-	-			1.045/0.933	-	-	-	-			1.045/0.933	-	-	-	-		-
+QCDscale_qqH		lnN		-	1.004/0.997	-	-	-			-	1.004/0.997	-	-	-			-	1.004/0.997	-	-	-			-	1.004/0.997	-	-	-			-	1.004/0.997	-	-	-			-	1.004/0.997	-	-	-			-	1.004/0.997	-	-	-			-	1.004/0.997	-	-	-			-	1.004/0.997	-	-	-		-
+QCDscale_ttH		lnN		-	-	1.058/0.908	-	-		-	-	1.058/0.908	-	-		-	-	1.058/0.908	-	-		-	-	1.058/0.908	-	-		-	-	1.058/0.908	-	-		-	-	1.058/0.908	-	-		-	-	1.058/0.908	-	-		-	-	1.058/0.908	-	-		-	-	1.058/0.908	-	-	-
+pdf_Higgs_gg		lnN		0.968/1.032	-	-	-	-		0.968/1.032	-	-	-	-		0.968/1.032	-	-	-	-		0.968/1.032	-	-	-	-		0.968/1.032	-	-	-	-		0.968/1.032	-	-	-	-		0.968/1.032	-	-	-	-		0.968/1.032	-	-	-	-		0.968/1.032	-	-	-	-	-
+pdf_Higgs_qqbar		lnN		-	0.979/1.021	-	0.984/1.016	0.981/1.019		-	0.979/1.021	-	0.984/1.016	0.981/1.019		-	0.979/1.021	-	0.984/1.016	0.981/1.019		-	0.979/1.021	-	0.984/1.016	0.981/1.019		-	0.979/1.021	-	0.984/1.016	0.981/1.019		-	0.979/1.021	-	0.984/1.016	0.981/1.019		-	0.979/1.021	-	0.984/1.016	0.981/1.019		-	0.979/1.021	-	0.984/1.016	0.981/1.019		-	0.979/1.021	-	0.984/1.016	0.981/1.019	-
+pdf_Higgs_ttH		lnN		-	-	0.964/1.036	-	-		-	-	0.964/1.036	-	-		-	-	0.964/1.036	-	-		-	-	0.964/1.036	-	-		-	-	0.964/1.036	-	-		-	-	0.964/1.036	-	-		-	-	0.964/1.036	-	-		-	-	0.964/1.036	-	-		-	-	0.964/1.036	-	-	-
+lumi_13TeV_xy		lnN		1.009000	1.009000	1.009000	1.009000	1.009000			1.009000	1.009000	1.009000	1.009000	1.009000			1.008000	1.008000	1.008000	1.008000	1.008000			1.008000	1.008000	1.008000	1.008000	1.008000			1.020000	1.020000	1.020000	1.020000	1.020000			1.020000	1.020000	1.020000	1.020000	1.020000			1.009000	1.009000	1.009000	1.009000	1.009000			1.008000	1.008000	1.008000	1.008000	1.008000			1.020000	1.020000	1.020000	1.020000	1.020000		-
+lumi_13TeV_sc		lnN		1.000000	1.000000	1.000000	1.000000	1.000000			1.000000	1.000000	1.000000	1.000000	1.000000			1.003000	1.003000	1.003000	1.003000	1.003000			1.003000	1.003000	1.003000	1.003000	1.003000			1.002000	1.002000	1.002000	1.002000	1.002000			1.002000	1.002000	1.002000	1.002000	1.002000			1.000000	1.000000	1.000000	1.000000	1.000000			1.003000	1.003000	1.003000	1.003000	1.003000			1.002000	1.002000	1.002000	1.002000	1.002000		-
+lumi_13TeV_deflect		lnN		1.004000	1.004000	1.004000	1.004000	1.004000			1.004000	1.004000	1.004000	1.004000	1.004000			1.004000	1.004000	1.004000	1.004000	1.004000			1.004000	1.004000	1.004000	1.004000	1.004000			1.000000	1.000000	1.000000	1.000000	1.000000			1.000000	1.000000	1.000000	1.000000	1.000000			1.004000	1.004000	1.004000	1.004000	1.004000			1.004000	1.004000	1.004000	1.004000	1.004000			1.000000	1.000000	1.000000	1.000000	1.000000		-
+lumi_13TeV_dynamic		lnN		1.005000	1.005000	1.005000	1.005000	1.005000			1.005000	1.005000	1.005000	1.005000	1.005000			1.005000	1.005000	1.005000	1.005000	1.005000			1.005000	1.005000	1.005000	1.005000	1.005000			1.000000	1.000000	1.000000	1.000000	1.000000			1.000000	1.000000	1.000000	1.000000	1.000000			1.005000	1.005000	1.005000	1.005000	1.005000			1.005000	1.005000	1.005000	1.005000	1.005000			1.000000	1.000000	1.000000	1.000000	1.000000		-
+lumi_13TeV_calib		lnN		1.000000	1.000000	1.000000	1.000000	1.000000			1.000000	1.000000	1.000000	1.000000	1.000000			1.003000	1.003000	1.003000	1.003000	1.003000			1.003000	1.003000	1.003000	1.003000	1.003000			1.002000	1.002000	1.002000	1.002000	1.002000			1.002000	1.002000	1.002000	1.002000	1.002000			1.000000	1.000000	1.000000	1.000000	1.000000			1.003000	1.003000	1.003000	1.003000	1.003000			1.002000	1.002000	1.002000	1.002000	1.002000		-
+lumi_13TeV_sat		lnN		1.004000	1.004000	1.004000	1.004000	1.004000			1.004000	1.004000	1.004000	1.004000	1.004000			1.001000	1.001000	1.001000	1.001000	1.001000			1.001000	1.001000	1.001000	1.001000	1.001000			1.000000	1.000000	1.000000	1.000000	1.000000			1.000000	1.000000	1.000000	1.000000	1.000000			1.004000	1.004000	1.004000	1.004000	1.004000			1.001000	1.001000	1.001000	1.001000	1.001000			1.000000	1.000000	1.000000	1.000000	1.000000		-
+lumi_13TeV_2016		lnN		1.022000	1.022000	1.022000	1.022000	1.022000			1.022000	1.022000	1.022000	1.022000	1.022000		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-			1.022000	1.022000	1.022000	1.022000	1.022000			-	-	-	-	-		-	-	-	-	-		-
+lumi_13TeV_2017		lnN		-	-	-	-	-		-	-	-	-	-		1.020000	1.020000	1.020000	1.020000	1.020000			1.020000	1.020000	1.020000	1.020000	1.020000		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		1.020000	1.020000	1.020000	1.020000	1.020000		-	-	-	-	-		-
+lumi_13TeV_2018		lnN		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		1.015000	1.015000	1.015000	1.015000	1.015000			1.015000	1.015000	1.015000	1.015000	1.015000		-	-	-	-	-		-	-	-	-	-		1.015000	1.015000	1.015000	1.015000	1.015000		-
+CMS_PU_13TeV       		lnN		     1.00394  1.00013  1.00394  1.00394   1.00394	     1.00355  1.00418  1.00355  1.00355   1.00355			     1.00659  1.0134  1.00659  1.00659   1.00659	     1.00674  1.00751  1.00674  1.00674   1.00674			     1.00867  1.01148  1.00867  1.00867   1.00867	     1.00415  1.01016  1.00415  1.00415   1.00415	     1.00355  1.00418  1.00355  1.00355   1.00355	     1.00674  1.00751  1.00674  1.00674   1.00674	     1.00415  1.01016  1.00415  1.00415   1.00415	-
+CMS_L1_13TeV       		lnN		     1.00413  1.00643  1.00413  1.00413   1.00413	     1.00183  1.00322  1.00183  1.00183   1.00183			     1.00655  1.01072  1.00655  1.00655   1.00655	     1.00222  1.00535  1.00222  1.00222   1.00222			-	-	-	-	-		-	-	-	-	-	     1.00183  1.00322  1.00183  1.00183   1.00183	     1.00222  1.00535  1.00222  1.00222   1.00222		-	-	-	-	-		-
+CMS_IDeff_g_13TeV       		lnN		     1.0412  1.03523  1.0412  1.0412   1.0412	     1.04227  1.03531  1.04227  1.04227   1.04227			     1.03422  1.03122  1.03422  1.03422   1.03422	     1.03391  1.03213  1.03391  1.03391   1.03391			     1.0051  1.00535  1.0051  1.0051   1.0051	     1.00497  1.00526  1.00497  1.00497   1.00497	     1.04227  1.03531  1.04227  1.04227   1.04227	     1.03391  1.03213  1.03391  1.03391   1.03391	     1.00497  1.00526  1.00497  1.00497   1.00497	-
+CMS_IDeff_e_13TeV       		lnN		     1.01015  1.0108  1.01015  1.01015   1.01015	-	-	-	-	-			     1.01563  1.01739  1.01563  1.01563   1.01563	-	-	-	-	-			     1.00612  1.00664  1.00612  1.00612   1.00612	-	-	-	-	-		-	-	-	-	-			-	-	-	-	-			-	-	-	-	-			-	-	-	-	-			-	-	-	-	-			-	-	-	-	-			-	-	-	-	-			-	-	-	-	-			-	-	-	-	-		-
+CMS_IDeff_m_13TeV       		lnN			-	-	-	-	-	     1.00562  1.00627  1.00562  1.00562   1.00562				-	-	-	-	-	     1.00417  1.00433  1.00417  1.00417   1.00417				-	-	-	-	-	     1.00353  1.00366  1.00353  1.00353   1.00353     1.00562  1.00627  1.00562  1.00562   1.00562	     1.00417  1.00433  1.00417  1.00417   1.00417	     1.00353  1.00366  1.00353  1.00353   1.00353	-
+CMS_HLTeff_e_13TeV2016       		lnN		     1.00685  1.0077  1.00685  1.00685   1.00685	-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-			-	-	-	-	-			-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		-
+CMS_HLTeff_e_13TeV2017       		lnN		-	-	-	-	-		     1.00674  1.00643  1.00674  1.00674   1.00674	-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-			-	-	-	-	-			-	-	-	-	-		-	-	-	-	-		-
+CMS_HLTeff_e_13TeV2018       		lnN		-	-	-	-	-		     1.00674  1.00643  1.00674  1.00674   1.00674	-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-			-	-	-	-	-			-	-	-	-	-		-	-	-	-	-		-
+CMS_Vetoeff_g_13TeV2016       		lnN		     1.00995  1.00961  1.00995  1.00995   1.00995	     1.01005  1.00984  1.01005  1.01005   1.01005		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-	     1.01005  1.00984  1.01005  1.01005   1.01005	-	-	-	-	-		-	-	-	-	-		-
+CMS_Vetoeff_g_13TeV2017       		lnN		-	-	-	-	-		-	-	-	-	-		     1.0038  1.00381  1.0038  1.0038   1.0038	     1.0038  1.0038  1.0038  1.0038   1.0038		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-	     1.0038  1.0038  1.0038  1.0038   1.0038	-	-	-	-	-		-
+CMS_Vetoeff_g_13TeV2018       		lnN		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		     1.0045  1.00513  1.0045  1.0045   1.0045	     1.00448  1.00486  1.00448  1.00448   1.00448		-	-	-	-	-		-	-	-	-	-	     1.00448  1.00486  1.00448  1.00448   1.00448	-
+CMS_HLTeff_m_13TeV2016       		lnN			-	-	-	-	-	     1.00033  1.00054  1.00033  1.00033   1.00033		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-	     1.00033  1.00054  1.00033  1.00033   1.00033	-	-	-	-	-		-	-	-	-	-		-
+CMS_HLTeff_m_13TeV2017       		lnN		-	-	-	-	-		-	-	-	-	-			-	-	-	-	-	     1.00023  1.00035  1.00023  1.00023   1.00023		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-	     1.00023  1.00035  1.00023  1.00023   1.00023	-	-	-	-	-		-
+CMS_HLTeff_m_13TeV2018       		lnN		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-		-	-	-	-	-			-	-	-	-	-	     1.00028  1.00116  1.00028  1.00028   1.00028	-	-	-	-	-		-	-	-	-	-	     1.00028  1.00116  1.00028  1.00028   1.00028	-
+CMS_hzg_ele_kinMVA		lnN		1.08026	1.08336	1.08026	1.08026	1.08026		1.05626	1.05648	1.05626	1.05626	1.05626		1.04102	1.04117	1.04102	1.04102	1.04102		1.19433	1.19552	1.19433	1.19433	1.19433		1.03634	1.03603	1.03634	1.03634	1.03634		1.03582	1.03573	1.03582	1.03582	1.03582		1.08026	1.08336	1.08026	1.08026	1.08026		1.05626	1.05648	1.05626	1.05626	1.05626		1.04102	1.04117	1.04102	1.04102	1.04102	-
+CMS_hzg_delta_elePho_mean_ggF_m125_cat4  	param	1		1.00031		1.00031		1.00063
+CMS_hzg_delta_elePho_sigma_ggF_m125_cat4  	param	1		1.05511		1.05511		1.06454
+CMS_hzg_delta_elePho_mean_VBF_m125_cat4  	param	1		1.001		1.001		1.00062
+CMS_hzg_delta_elePho_sigma_VBF_m125_cat4  	param	1		1.05277		1.05277		1.07221
+CMS_hzg_delta_elePho_mean_ggF_m125_cat4  	param	1		1.00031		1.00031		1.00063
+CMS_hzg_delta_elePho_sigma_ggF_m125_cat4  	param	1		1.05511		1.05511		1.06454
+CMS_hzg_delta_elePho_mean_VBF_m125_cat4  	param	1		1.001		1.001		1.00062
+CMS_hzg_delta_elePho_sigma_VBF_m125_cat4  	param	1		1.05277		1.05277		1.07221
+CMS_hzg_delta_muPho_mean_ggF_m125_cat4  	param	1		1.00048		1.00048		1.00021
+CMS_hzg_delta_muPho_sigma_ggF_m125_cat4  	param	1		1.07318		1.07318		1.08452
+CMS_hzg_delta_muPho_mean_VBF_m125_cat4  	param	1		1.00035		1.00035		1.00441
+CMS_hzg_delta_muPho_sigma_VBF_m125_cat4  	param	1		1.05059		1.05059		1.07128
+#pdfindex_ele_mu_cat4_2020_13TeV discrete 
+catIndex discrete
