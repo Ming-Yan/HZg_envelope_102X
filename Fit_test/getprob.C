@@ -135,28 +135,29 @@ int getBestFitFunction(RooMultiPdf *bkg, RooDataSet *data, RooCategory *cat, boo
 
 void getprob(int cat)
 {
-  TFile *f = TFile::Open(Form("turnon_cat%d.root",cat));
+  TFile *f = TFile::Open(Form("newturnon_cat%d.root",cat));
   RooWorkspace *w = (RooWorkspace*)f->Get("multipdf");
-    string catname[13] = 
+    string catname[15] = 
       {
         "gauxexp1", "gauxexp3", "gauxexp5",
         "gauxpow1", "gauxpow3", "gauxpow5",
-        "gauxlau1", "gauxlau2", "gauxlau3",
+        "gauxlau1", "gauxlau2", "gauxlau3","gauxlau4","gauxlau5",
         "bern2", "bern3", "bern4", "bern5",
       };
     RooRealVar *CMS_hzg_mass = (RooRealVar*) w->var("CMS_hzg_mass");
     RooCategory *cats = (RooCategory*)w->cat("catIndex");
     // CMS_hzg_mass.setBins(320);
     RooPlot* xframe1  = CMS_hzg_mass->frame() ;
-    RooDataSet *data = (RooDataSet*)w->data(Form("data_obs_ele_mu_cat%d_2020",cat));
-    RooMultiPdf *pdf = (RooMultiPdf*)w->pdf("CMS_hzg_bkgshape");
-     cout<<"Get best fit functions"<<endl;
-      int bestfit = 0;
-      bestfit=getBestFitFunction(pdf, data, cats);
-      cout<<catname[bestfit]<<endl;
-    for(int i = 0 ; i < 13; i++)
+    //RooDataSet *data = (RooDataSet*)w->data(Form("data_obs_ele_mu_cat%d_2020",cat));
+    
+    //RooMultiPdf *pdf = (RooMultiPdf*)w->pdf("CMS_hzg_bkgshape");
+    //cout<<"Get best fit functions"<<endl;
+     //int bestfit = 0;
+      //bestfit=getBestFitFunction(pdf, data, cats);
+    //cout<<catname[bestfit]<<endl;
+    for(int i = 0 ; i < 15; i++)
       {
-        RooFitResult *result = (RooFitResult*)f->Get(Form("fitresult_%s_data_obs_ele_mu_cat%d_2020",catname[i].c_str(),cat));
+        RooFitResult *result = (RooFitResult*)f->Get(Form("fitresult_%s_datahist_ele_mu_cat%d_2020",catname[i].c_str(),cat));
         double prevNLL,thisNLL,chi2,prob;
         int order,prevorder;
         if(i<3){
@@ -183,7 +184,7 @@ void getprob(int cat)
           }
           if(i<5){prevNLL = thisNLL; prevorder=order;}
         }//PowerLaw
-        else if(i<9){
+        else if(i<11){
           order=i-5;
           thisNLL = result->minNll();
           chi2 = 2.*(prevNLL-thisNLL);
@@ -196,16 +197,16 @@ void getprob(int cat)
           if(i<8){prevNLL = thisNLL; prevorder=order;}        
           }//Laurent
         else {
-          order=i-7;
+          order=i-9;
           thisNLL = result->minNll();
           chi2 = 2.*(prevNLL-thisNLL);
           if (chi2<0. && order>1) chi2=0.;
-          if(i>9)
+          if(i>11)
           {
             prob = TMath::Prob(chi2,order-prevorder);
             cout<<catname[i]<<" "<<prob<<endl;
           }
-          if(i<12){prevNLL = thisNLL; prevorder=order;}
+          if(i<14){prevNLL = thisNLL; prevorder=order;}
         }//Bernstein
         
       }
