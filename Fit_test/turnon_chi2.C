@@ -70,8 +70,8 @@ void turnon_chi2(int cat)
   RooRealVar step_b1("step_b1","step_b1",107,100,110);
   RooRealVar step_b2("step_b2","step_b2",107,100,110);
   RooRealVar step_b3("step_b3","step_b3",107,100,110);
-  RooRealVar step_b4("step_b4","step_b4",107,100,110);
-  RooRealVar step_b5("step_b5","step_b5",107,100,110);
+  RooRealVar step_b4("step_b4","step_b4",105,100,110);
+  RooRealVar step_b5("step_b5","step_b5",105,103,108);
   RooRealVar p0("p0","p0",15);
   RooRealVar b1p1("b1p1","b1p1",0.3,-25.,25);
   RooRealVar b2p1("b2p1","b2p1",0.3,-25.,25);
@@ -110,15 +110,15 @@ void turnon_chi2(int cat)
   // RooRealVar p1_pow1("p1_pow1","p1_pow1",-6.5,-15,-5.);
   // RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.02 ,0.0,1.);
   //cat4
-  // RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",3.3,2.5,8.);
-  // RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",106.9,105,108);
-  // RooRealVar p1_pow1("p1_pow1","p1_pow1",-6.3453,-10,-5.);
-  // RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",3.3018e-02 ,0.0,1.);
+  // RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",3.5717,3.,4.);
+  // RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",106.9,106,108);
+  // RooRealVar p1_pow1("p1_pow1","p1_pow1",-6.3453,-7,-5.);
+  // RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",4.7131e-05 ,0.0,1.);
   //cat501
-  // RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",6.,0.1,10);
-  // RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",108,106,109);
-  // RooRealVar p1_pow1("p1_pow1","p1_pow1",-5.6,-15,-5.);
-  // RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.0002 ,0.0,1.);
+  RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",6.,0.1,10);
+  RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",108,106,109);
+  RooRealVar p1_pow1("p1_pow1","p1_pow1",-5.6,-15,-5.);
+  RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.0002 ,0.0,1.);
   //cat502
   // RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",6.,0.1,10);
   // RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",104.6,104,105);
@@ -130,10 +130,10 @@ void turnon_chi2(int cat)
   // RooRealVar p1_pow1("p1_pow1","p1_pow1",-5.2,-8,-1.);
   // RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.001,0.000001,1.);
   //cat6789
-  RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",4.95,1.,8.);
-  RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",105.7,104,106);
-  RooRealVar p1_pow1("p1_pow1","p1_pow1",-4.,-8,-1.);
-  RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.001,0.000001,1.);
+  // RooRealVar sigma_pow1("sigma_pow1","sigma_pow1",4.95,1.,8.);
+  // RooRealVar turnon_pow1("turnon_pow1","turnon_pow1",105.7,104,106);
+  // RooRealVar p1_pow1("p1_pow1","p1_pow1",-4.,-8,-1.);
+  // RooRealVar cp1_pow1("cp1_pow1","cp1_pow1",0.001,0.000001,1.);
   //cat1
   // RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",6.6041,3.,8.);
   // RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",108.2,107,109);
@@ -151,10 +151,10 @@ void turnon_chi2(int cat)
   //cat3
   // RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",4.,3.,5.);
   // RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",106.6,106,107);
-  // RooRealVar p1_pow3("p1_pow3","p1_pow3",-7.1,-10,-5.);
-  // RooRealVar cp1_pow3("cp1_pow3","cp1_pow3",0.99,0.4,1.);
-  // RooRealVar p3_pow3("p3_pow3","p3_pow3",-4.7,-6.,-2.);
-  // RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",2.2493e-12,0,0.001);
+  // RooRealVar p1_pow3("p1_pow3","p1_pow3", -7.0864,-9,-6.);
+  // RooRealVar cp1_pow3("cp1_pow3","cp1_pow3",0.99,0.,1.);
+  // RooRealVar p3_pow3("p3_pow3","p3_pow3",-4.8364,-6.,-3.);
+  // RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",7.1789e-14,0,0.001);
   //cat4
   // RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",3.5,3.,8.);
   // RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",107,105,108);
@@ -163,12 +163,12 @@ void turnon_chi2(int cat)
   // RooRealVar p3_pow3("p3_pow3","p3_pow3",-4.267,-8.,-2.);
   // RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",1.1001e-06,0,1.);
   //cat501
-  // RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",8.505,3.,10);
-  // RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",108,107,109);
-  // RooRealVar p1_pow3("p1_pow3","p1_pow3",-6.4708,-10,-2.);
-  // RooRealVar cp1_pow3("cp1_pow3","cp1_pow3",8.4306e-01,0.,1.);
-  // RooRealVar p3_pow3("p3_pow3","p3_pow3",-6.1246,-8.,-2.);
-  // RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",1.4141e-06,0,1.);
+  RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",8.5830,7.,9.);
+  RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",108.47,108,109);
+  RooRealVar p1_pow3("p1_pow3","p1_pow3",-6.5,-10,-5.);
+  RooRealVar cp1_pow3("cp1_pow3","cp1_pow3",5.3658e-03 ,0.,1.);
+  RooRealVar p3_pow3("p3_pow3","p3_pow3",-6.,-8.,-5.);
+  RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",4.4629e-10,0,0.001);
   //cat502
   // RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",5.,3.,10);
   // RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",104.6,100,110);
@@ -184,21 +184,21 @@ void turnon_chi2(int cat)
   // RooRealVar p3_pow3("p3_pow3","p3_pow3",-4,-5.,-1.);
   // RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",0.01,0,1.);
   //cat6789
-  RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",4.8,3.,6.);
-  RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",105.7,104,107);
-  RooRealVar p1_pow3("p1_pow3","p1_pow3",-6.1,-10.,-1.);
-  RooRealVar cp1_pow3("cp1_pow3","cp1_pow3",1.e-06,0.,1.);
-  RooRealVar p3_pow3("p3_pow3","p3_pow3",-3.0,-6.,-1.);
-  RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",0.81,0,1.);
+  // RooRealVar sigma_pow3("sigma_pow3","sigma_pow3",4.8,3.,6.);
+  // RooRealVar turnon_pow3("turnon_pow3","turnon_pow3",105.7,104,107);
+  // RooRealVar p1_pow3("p1_pow3","p1_pow3",-6.1,-10.,-1.);
+  // RooRealVar cp1_pow3("cp1_pow3","cp1_pow3",1.e-06,0.,1.);
+  // RooRealVar p3_pow3("p3_pow3","p3_pow3",-3.0,-6.,-1.);
+  // RooRealVar cp3_pow3("cp3_pow3","cp3_pow3",0.81,0,1.);
   //cat1
-  // RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",6,3.,10);
-  // RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",108,107,109);
-  // RooRealVar p1_pow5("p1_pow5","p1_pow5",-9,-15,-5);
-  // RooRealVar cp1_pow5("cp1_pow5","cp1_pow5",0.04,0.,1.);
-  // RooRealVar p3_pow5("p3_pow5","p3_pow5",-7.,-10.,-2.);
-  // RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",0.1,0,1.);
-  // RooRealVar p5_pow5("p5_pow5","p5_pow5",-5.6,-10.,-1.);
-  // RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.001,0.001,1.);
+  // RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",6.6,5.,7.);
+  // RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",108.42,107,109);
+  // RooRealVar p1_pow5("p1_pow5","p1_pow5",-5.2664,-7,-4);
+  // RooRealVar cp1_pow5("cp1_pow5","cp1_pow5", 2.6960e-06,0.,.01);
+  // RooRealVar p3_pow5("p3_pow5","p3_pow5",-9.7909,-12.,-8.);
+  // RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",3.3933e-04,0,.1);
+  // RooRealVar p5_pow5("p5_pow5","p5_pow5",-6.0477,-8.,-5.);
+  // RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",5.5285e-02,0.,0.1);
   //cat2
   // RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",5.,3.,10);
   // RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",108.64,107,109);
@@ -227,14 +227,14 @@ void turnon_chi2(int cat)
   // RooRealVar p5_pow5("p5_pow5","p5_pow5",-6.3,-8.,-3.);
   // RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",2.0522e-02,0.0,1.);
   //cat501
-  // RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",6,3.,10);
-  // RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",108,107,109);
-  // RooRealVar p1_pow5("p1_pow5","p1_pow5",-9,-15,-5);
-  // RooRealVar cp1_pow5("cp1_pow5","cp1_pow5",0.04,0.,1.);
-  // RooRealVar p3_pow5("p3_pow5","p3_pow5",-7.,-10.,-2.);
-  // RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",0.1,0,1.);
-  // RooRealVar p5_pow5("p5_pow5","p5_pow5",-5.6,-10.,-1.);
-  // RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.001,0.001,1.);
+  RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",6,3.,10);
+  RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",108,107,109);
+  RooRealVar p1_pow5("p1_pow5","p1_pow5",-9,-15,-5);
+  RooRealVar cp1_pow5("cp1_pow5","cp1_pow5",0.04,0.,1.);
+  RooRealVar p3_pow5("p3_pow5","p3_pow5",-7.,-10.,-2.);
+  RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",0.1,0,1.);
+  RooRealVar p5_pow5("p5_pow5","p5_pow5",-5.6,-10.,-1.);
+  RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.001,0.001,1.);
   //cat502
   // RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",5.,3.,10);
   // RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",104.6,100,110);
@@ -254,14 +254,14 @@ void turnon_chi2(int cat)
   // RooRealVar p5_pow5("p5_pow5","p5_pow5",-4,-10.,-1.);
   // RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.0001,0.00001,1.);
   //cat6789
-  RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",4.95,3.,10);
-  RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",105.9,104,107);
-  RooRealVar p1_pow5("p1_pow5","p1_pow5",-6.2,-12,-4);
-  RooRealVar cp1_pow5("cp1_pow5","cp1_pow5",0.5,0.,1.);
-  RooRealVar p3_pow5("p3_pow5","p3_pow5",-3.,-10.,0.);
-  RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",0.37,0,1.);
-  RooRealVar p5_pow5("p5_pow5","p5_pow5",-3.8,-10.,0.);
-  RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.5,0.0,1.);
+  // RooRealVar sigma_pow5("sigma_pow5","sigma_pow5",4.95,3.,10);
+  // RooRealVar turnon_pow5("turnon_pow5","turnon_pow5",105.9,104,107);
+  // RooRealVar p1_pow5("p1_pow5","p1_pow5",-6.2,-12,-4);
+  // RooRealVar cp1_pow5("cp1_pow5","cp1_pow5",0.5,0.,1.);
+  // RooRealVar p3_pow5("p3_pow5","p3_pow5",-3.,-10.,0.);
+  // RooRealVar cp3_pow5("cp3_pow5","cp3_pow5",0.37,0,1.);
+  // RooRealVar p5_pow5("p5_pow5","p5_pow5",-3.8,-10.,0.);
+  // RooRealVar cp5_pow5("cp5_pow5","cp5_pow5",0.5,0.0,1.);
 
   RooGenericPdf step_pow1("step_pow1", "step_pow1", "1e-20+(@0 > @1)*(@3*(@0)^(@2))", RooArgList(CMS_hzg_mass,turnon_pow1,p1_pow1,cp1_pow1));//step*(ax^b)
   RooGenericPdf step_pow3("step_pow3", "step_pow3", "1e-20+(@0 > @1)*(@3*(@0)^(@2)+@5*(@0)^(@4))", RooArgList(CMS_hzg_mass,turnon_pow3,p1_pow3,cp1_pow3,p3_pow3,cp3_pow3));//step*(ax^b+cx^d)
@@ -295,25 +295,25 @@ void turnon_chi2(int cat)
   // RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",4.6222e-10,0.0,0.01);//untag
   // RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",4.2351e-01,0.,1.);
   //cat501
-  // RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",6,3.,10);
-  // RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",108,107,109);
-  // RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",0.000000001,0.0,1.);//untag
-  // RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",0.99999,0,1.);
+  RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",6,3.,10);
+  RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",108,107,109);
+  RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",0.000000001,0.0,1.);//untag
+  RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",0.99999,0,1.);
   //cat502
   // RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",6,3.,10);
   // RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",104.6,100,110);
   // RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",0.000000001,0.0,1.);//untag
   // RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",0.99999,0,1.);
   //cat503
-  // RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",4.,3.,6.);
-  // RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",104.2,104,105);
-  // RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",0.99,0.0,1.);//untag
-  // RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",5.7348e-08,0,1.);
+  // RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",3.9,3.,5.);
+  // RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",104.8,104,106);
+  // RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",9.3937e-01,0.0,1.);//untag
+  // RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",4.9829e-06,0,1.);
   //cat6789
-  RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",4.95,3.,6.);
-  RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",105.9,103,107);
-  RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",2.7933e-01,0.0,1.);//untag
-  RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",8.3706e-03,0,1.);
+  // RooRealVar sigma_lau1("sigma_lau1","sigma_lau1",4.95,3.,6.);
+  // RooRealVar turnon_lau1("turnon_lau1","turnon_lau1",105.9,103,107);
+  // RooRealVar cl1_lau1("cl1_lau1","cl1_lau1",2.7933e-01,0.0,1.);//untag
+  // RooRealVar cl2_lau1("cl2_lau1","cl2_lau1",8.3706e-03,0,1.);
   //cat1
   // RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",6,3.,10);
   // RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",108,107,109);
@@ -339,11 +339,11 @@ void turnon_chi2(int cat)
   // RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",9.5000e-01,0.9,1.0);
   // RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",1.0828e-07,0,0.1);
   //cat501
-  // RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",6,3.,10);
-  // RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",108,107,109);
-  // RooRealVar cl1_lau2("cl1_lau2","cl1_lau2",0.00000000001,0.,1.);
-  // RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",0.999999999,0.,1.);
-  // RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",0.0,0,1.);
+  RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",6,3.,10);
+  RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",108,107,109);
+  RooRealVar cl1_lau2("cl1_lau2","cl1_lau2",0.00000000001,0.,1.);
+  RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",0.999999999,0.,1.);
+  RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",0.0,0,1.);
   //cat502
   // RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",6,3.,10);
   // RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",104.6,100,110);
@@ -357,12 +357,11 @@ void turnon_chi2(int cat)
   // RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",0.95,0.,1.05);
   // RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",0.1,0,1.);
   //cat6789
-  RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",4.95,3.,6.);
-  RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",105.9,104,107);
-  RooRealVar cl1_lau2("cl1_lau2","cl1_lau2",1.7839e-06,0.,1.);
-  RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",0.95,0.,1.05);
-  RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",0.1,0,1.);
- 
+  // RooRealVar sigma_lau2("sigma_lau2","sigma_lau2",4.95,3.,6.);
+  // RooRealVar turnon_lau2("turnon_lau2","turnon_lau2",105.9,104,107);
+  // RooRealVar cl1_lau2("cl1_lau2","cl1_lau2",1.7839e-06,0.,1.);
+  // RooRealVar cl2_lau2("cl2_lau2","cl2_lau2",0.95,0.,1.05);
+  // RooRealVar cl3_lau2("cl3_lau2","cl3_lau2",0.1,0,1.);
   //cat1
   // RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",6,3.,10);
   // RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",108,107,109);
@@ -392,12 +391,12 @@ void turnon_chi2(int cat)
   // RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",8.7939e-11,0,.0001);
   // RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",9.0697e-01,0.9,1.);
    //cat501
-  // RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",6,3.,10);
-  // RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",108,107,109);
-  // RooRealVar cl1_lau3("cl1_lau3","cl1_lau3",0.0000000001,0.,1.);
-  // RooRealVar cl2_lau3("cl2_lau3","cl2_lau3",0.0000001,0.,1.);
-  // RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",0.0,0,1.);
-  // RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",0.999999999,0,1.);
+  RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",6,3.,10);
+  RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",108,107,109);
+  RooRealVar cl1_lau3("cl1_lau3","cl1_lau3",0.0000000001,0.,1.);
+  RooRealVar cl2_lau3("cl2_lau3","cl2_lau3",0.0000001,0.,1.);
+  RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",0.0,0,1.);
+  RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",0.999999999,0,1.);
   // cat502
   // RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",4.8,3.,6);
   // RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",105,100,110);
@@ -413,12 +412,12 @@ void turnon_chi2(int cat)
   // RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",0.000001,0,1.);
   // RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",0.02,0,1.);
   //cat6789
-  RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",5.,3.,6.);
-  RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",106.,104,107);
-  RooRealVar cl1_lau3("cl1_lau3","cl1_lau3",3.0862e-02,0.,1.);
-  RooRealVar cl2_lau3("cl2_lau3","cl2_lau3",4.1937e-02,0.,1.);
-  RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",5.7030e-03,0,1.);
-  RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",7.5681e-01,0,1.);
+  // RooRealVar sigma_lau3("sigma_lau3","sigma_lau3",5.,3.,6.);
+  // RooRealVar turnon_lau3("turnon_lau3","turnon_lau3",106.,104,107);
+  // RooRealVar cl1_lau3("cl1_lau3","cl1_lau3",3.0862e-02,0.,1.);
+  // RooRealVar cl2_lau3("cl2_lau3","cl2_lau3",4.1937e-02,0.,1.);
+  // RooRealVar cl3_lau3("cl3_lau3","cl3_lau3",5.7030e-03,0,1.);
+  // RooRealVar cl4_lau3("cl4_lau3","cl4_lau3",7.5681e-01,0,1.);
   
   //cat1
   // RooRealVar sigma_lau4("sigma_lau4","sigma_lau4",6,3.,10);
@@ -429,21 +428,22 @@ void turnon_chi2(int cat)
   // RooRealVar cl4_lau4("cl4_lau4","cl4_lau4",6.6948e-01,0.5,1.);
   // RooRealVar cl5_lau4("cl5_lau4","cl5_lau4",2.3252e-11 ,0,0.1);
   //cat2
-  // RooRealVar sigma_lau4("sigma_lau4","sigma_lau4",4.8,3.,6.);
-  // RooRealVar turnon_lau4("turnon_lau4","turnon_lau4",107.78,107,109);
-  // RooRealVar cl1_lau4("cl1_lau4","cl1_lau4",5.e-09,0.,.001);
-  // RooRealVar cl2_lau4("cl2_lau4","cl2_lau4",0.1,0.,.1);
-  // RooRealVar cl3_lau4("cl3_lau4","cl3_lau4",7e-11,0,.0001);
-  // RooRealVar cl4_lau4("cl4_lau4","cl4_lau4",0.9,0.,1.);
-  // RooRealVar cl5_lau4("cl5_lau4","cl5_lau4",0.,0,1.);
+//   RooRealVar sigma_lau4("sigma_lau4","sigma_lau4",4.8,3.,6.);
+//   RooRealVar turnon_lau4("turnon_lau4","turnon_lau4",107.78,107,109);
+//   RooRealVar cl1_lau4("cl1_lau4","cl1_lau4",2.1580e-07,0.,.0001);
+//   RooRealVar cl2_lau4("cl2_lau4","cl2_lau4",9.5006e-04,0.,.01);
+//   RooRealVar cl3_lau4("cl3_lau4","cl3_lau4",7e-11,0,.0001);
+//   RooRealVar cl4_lau4("cl4_lau4","cl4_lau4",6.3471e-01,0.,1.);
+//  RooRealVar cl5_lau4("cl5_lau4","cl5_lau4",1.9395e-12,0,.00001);
+
   // cat3
-  // RooRealVar sigma_lau4("sigma_lau4","sigma_lau4",4.,1.,6.);
-  // RooRealVar turnon_lau4("turnon_lau4","turnon_lau4",107,104,109);
-  // RooRealVar cl1_lau4("cl1_lau4","cl1_lau4",2.1437e-07,0.,.001);
-  // RooRealVar cl2_lau4("cl2_lau4","cl2_lau4",9.1240e-02,0.,.1);
-  // RooRealVar cl3_lau4("cl3_lau4","cl3_lau4",4.8032e-07,0,.0001);
-  // RooRealVar cl4_lau4("cl4_lau4","cl4_lau4",0.999999,0.9,1.);
-  // RooRealVar cl5_lau4("cl5_lau4","cl5_lau4",0.,0,1.);
+//   RooRealVar sigma_lau4("sigma_lau4","sigma_lau4",4.,1.,6.);
+//   RooRealVar turnon_lau4("turnon_lau4","turnon_lau4",107,104,109);
+//   RooRealVar cl1_lau4("cl1_lau4","cl1_lau4",6.6334e-09,0.,.001);
+// RooRealVar cl2_lau4("cl2_lau4","cl2_lau4",1.6890e-03,0.,.1);
+// RooRealVar cl3_lau4("cl3_lau4","cl3_lau4",7e-11,0,.0001);
+// RooRealVar cl4_lau4("cl4_lau4","cl4_lau4",5.9884e-01,0.,1.);
+// RooRealVar cl5_lau4("cl5_lau4","cl5_lau4",7.7440e-12,0,0.000001);
   //cat4
   // RooRealVar sigma_lau4("sigma_lau4","sigma_lau4",3.53,2.,6.);
   // RooRealVar turnon_lau4("turnon_lau4","turnon_lau4",107.2,105,109);
@@ -453,13 +453,13 @@ void turnon_chi2(int cat)
   // RooRealVar cl4_lau4("cl4_lau4","cl4_lau4",0.99,0.9,1.);
   // RooRealVar cl5_lau4("cl5_lau4","cl5_lau4",0.,0,1.);
    //cat501
-  // RooRealVar sigma_lau4("sigma_lau4","sigma_lau4",6,3.,10);
-  // RooRealVar turnon_lau4("turnon_lau4","turnon_lau4",108,107,109);
-  // RooRealVar cl1_lau4("cl1_lau4","cl1_lau4",0.0000000001,0.,.0001);
-  // RooRealVar cl2_lau4("cl2_lau4","cl2_lau4",0.0000001,0.,0.01);
-  // RooRealVar cl3_lau4("cl3_lau4","cl3_lau4",0.0,0,0.0000001);
-  // RooRealVar cl4_lau4("cl4_lau4","cl4_lau4",0.999999999,0,1.);
-  // RooRealVar cl5_lau4("cl5_lau4","cl5_lau4",0.,0,.000001);
+  RooRealVar sigma_lau4("sigma_lau4","sigma_lau4",6,3.,10);
+  RooRealVar turnon_lau4("turnon_lau4","turnon_lau4",108,107,109);
+  RooRealVar cl1_lau4("cl1_lau4","cl1_lau4",0.0000000001,0.,.0001);
+  RooRealVar cl2_lau4("cl2_lau4","cl2_lau4",0.0000001,0.,0.01);
+  RooRealVar cl3_lau4("cl3_lau4","cl3_lau4",0.0,0,0.0000001);
+  RooRealVar cl4_lau4("cl4_lau4","cl4_lau4",0.999999999,0,1.);
+  RooRealVar cl5_lau4("cl5_lau4","cl5_lau4",0.,0,.000001);
   // cat502
 //   RooRealVar sigma_lau4("sigma_lau4","sigma_lau4",5.,3.,5.5);
 //   RooRealVar turnon_lau4("turnon_lau4","turnon_lau4",106.1,105,108);
@@ -476,15 +476,14 @@ void turnon_chi2(int cat)
   // RooRealVar cl3_lau4("cl3_lau4","cl3_lau4",0.000001,0,1.);
   // RooRealVar cl4_lau4("cl4_lau4","cl4_lau4",0.02,0,1.);
   //   RooRealVar cl5_lau4("cl5_lau4","cl5_lau4",0.,0,1.);
-
   //cat6789
-  RooRealVar sigma_lau4("sigma_lau4","sigma_lau4",5.,3.,6.);
-  RooRealVar turnon_lau4("turnon_lau4","turnon_lau4",106.,104,107);
-  RooRealVar cl1_lau4("cl1_lau4","cl1_lau4",3.0862e-02,0.,1.);
-  RooRealVar cl2_lau4("cl2_lau4","cl2_lau4",4.1937e-02,0.,1.);
-  RooRealVar cl3_lau4("cl3_lau4","cl3_lau4",5.7030e-03,0,1.);
-  RooRealVar cl4_lau4("cl4_lau4","cl4_lau4",7.5681e-01,0,1.);
-  RooRealVar cl5_lau4("cl5_lau4","cl5_lau4",0.,0,1.);
+  // RooRealVar sigma_lau4("sigma_lau4","sigma_lau4",5.,3.,6.);
+  // RooRealVar turnon_lau4("turnon_lau4","turnon_lau4",106.,104,107);
+  // RooRealVar cl1_lau4("cl1_lau4","cl1_lau4",3.0862e-02,0.,1.);
+  // RooRealVar cl2_lau4("cl2_lau4","cl2_lau4",4.1937e-02,0.,1.);
+  // RooRealVar cl3_lau4("cl3_lau4","cl3_lau4",5.7030e-03,0,1.);
+  // RooRealVar cl4_lau4("cl4_lau4","cl4_lau4",7.5681e-01,0,1.);
+  // RooRealVar cl5_lau4("cl5_lau4","cl5_lau4",0.,0,1.);
   //cat1
   // RooRealVar sigma_lau5("sigma_lau5","sigma_lau5",6,3.,7);
   // RooRealVar turnon_lau5("turnon_lau5","turnon_lau5",108,107,109);
@@ -495,23 +494,23 @@ void turnon_chi2(int cat)
   // RooRealVar cl5_lau5("cl5_lau5","cl5_lau5",3.3896e-12,0,.1);
   // RooRealVar cl6_lau5("cl6_lau5","cl6_lau5",0.99,0,1.);
     //cat2
-  // RooRealVar sigma_lau5("sigma_lau5","sigma_lau5", 4,3.,6.);
-  // RooRealVar turnon_lau5("turnon_lau5","turnon_lau5",107.6,107,109);
-  // RooRealVar cl1_lau5("cl1_lau5","cl1_lau5",2.1089e-07,0.,.001);
-  // RooRealVar cl2_lau5("cl2_lau5","cl2_lau5", 1.3548e-05 ,0.,.1);
-  // RooRealVar cl3_lau5("cl3_lau5","cl3_lau5",1.1405e-09,0,.0001);
-  // RooRealVar cl4_lau5("cl4_lau5","cl4_lau5",6.4445e-01,0.,1.);
-  // RooRealVar cl5_lau5("cl5_lau5","cl5_lau5",3.3896e-12,0,1.);
-  // RooRealVar cl6_lau5("cl6_lau5","cl6_lau5",9.9932e-01,0,1.);
+//   RooRealVar sigma_lau5("sigma_lau5","sigma_lau5",4.8,3.,6.);
+//   RooRealVar turnon_lau5("turnon_lau5","turnon_lau5",107.78,107,109);
+//   RooRealVar cl1_lau5("cl1_lau5","cl1_lau5",5.e-09,0.,.001);
+//   RooRealVar cl2_lau5("cl2_lau5","cl2_lau5",4.e-08,0.,.1);
+//   RooRealVar cl3_lau5("cl3_lau5","cl3_lau5",7e-11,0,.0001);
+//   RooRealVar cl4_lau5("cl4_lau5","cl4_lau5",5.1e-01,0.,1.);
+// RooRealVar cl5_lau5("cl5_lau5","cl5_lau5",0.00000,0,0.00001);
+// RooRealVar cl6_lau5("cl6_lau5","cl6_lau5",0.00000,0,0.00001);
   // cat3
-  // RooRealVar sigma_lau5("sigma_lau5","sigma_lau5",5.,3.,6.);
-  // RooRealVar turnon_lau5("turnon_lau5","turnon_lau5",107,104,109);
-  // RooRealVar cl1_lau5("cl1_lau5","cl1_lau5",9.3514e-10,0.,.001);
-  // RooRealVar cl2_lau5("cl2_lau5","cl2_lau5",9.5466e-08,0.,.1);
-  // RooRealVar cl3_lau5("cl3_lau5","cl3_lau5",8.7939e-11,0,.0001);
-  // RooRealVar cl4_lau5("cl4_lau5","cl4_lau5",0.5,0.2,1.);
-  // RooRealVar cl5_lau5("cl5_lau5","cl5_lau5",3.6526e-14,0,1.);
-  // RooRealVar cl6_lau5("cl6_lau5","cl6_lau5",0.999,0.0,1.);
+//   RooRealVar sigma_lau5("sigma_lau5","sigma_lau5",5.,3.,6.);
+//   RooRealVar turnon_lau5("turnon_lau5","turnon_lau5",107,104,109);
+//   RooRealVar cl1_lau5("cl1_lau5","cl1_lau5",5.e-09,0.,.001);
+// RooRealVar cl2_lau5("cl2_lau5","cl2_lau5",4.e-08,0.,.1);
+// RooRealVar cl3_lau5("cl3_lau5","cl3_lau5",7e-11,0,.0001);
+// RooRealVar cl4_lau5("cl4_lau5","cl4_lau5",5.1e-01,0.,1.);
+// RooRealVar cl5_lau5("cl5_lau5","cl5_lau5",0.0000001,0,1.);
+// RooRealVar cl6_lau5("cl6_lau5","cl6_lau5",0.0000001,0,1.);
   //cat4
   // RooRealVar sigma_lau5("sigma_lau5","sigma_lau5",3.4,2.,6.);
   // RooRealVar turnon_lau5("turnon_lau5","turnon_lau5",106.5,105,109);
@@ -522,14 +521,14 @@ void turnon_chi2(int cat)
   // RooRealVar cl5_lau5("cl5_lau5","cl5_lau5",3.6526e-14,0,1.);
   // RooRealVar cl6_lau5("cl6_lau5","cl6_lau5",2.5235e-02,0.0,0.5);
    //cat501
-  // RooRealVar sigma_lau5("sigma_lau5","sigma_lau5",6,3.,10);
-  // RooRealVar turnon_lau5("turnon_lau5","turnon_lau5",108,107,109);
-  // RooRealVar cl1_lau5("cl1_lau5","cl1_lau5",0.0000000001,0.,0.001);
-  // RooRealVar cl2_lau5("cl2_lau5","cl2_lau5",0.0000001,0.,0.01);
-  // RooRealVar cl3_lau5("cl3_lau5","cl3_lau5",0.0,0,0.01);
-  // RooRealVar cl4_lau5("cl4_lau5","cl4_lau5",0.4,0,1.);
-  // RooRealVar cl5_lau5("cl5_lau5","cl5_lau5",0.,0,0.0000001);
-  // RooRealVar cl6_lau5("cl6_lau5","cl6_lau5",0.999999999,0,1.);
+  RooRealVar sigma_lau5("sigma_lau5","sigma_lau5",6,3.,10);
+  RooRealVar turnon_lau5("turnon_lau5","turnon_lau5",108,107,109);
+  RooRealVar cl1_lau5("cl1_lau5","cl1_lau5",0.0000000001,0.,0.001);
+  RooRealVar cl2_lau5("cl2_lau5","cl2_lau5",0.0000001,0.,0.01);
+  RooRealVar cl3_lau5("cl3_lau5","cl3_lau5",0.0,0,0.01);
+  RooRealVar cl4_lau5("cl4_lau5","cl4_lau5",0.4,0,1.);
+  RooRealVar cl5_lau5("cl5_lau5","cl5_lau5",0.,0,0.0000001);
+  RooRealVar cl6_lau5("cl6_lau5","cl6_lau5",0.999999999,0,1.);
   // cat502
   // RooRealVar sigma_lau5("sigma_lau5","sigma_lau5",5,3.,10);
   // RooRealVar turnon_lau5("turnon_lau5","turnon_lau5",106.1,105,108);
@@ -548,16 +547,15 @@ void turnon_chi2(int cat)
   // RooRealVar cl4_lau5("cl4_lau5","cl4_lau5",0.02,0,1.);
   //   RooRealVar cl5_lau5("cl5_lau5","cl5_lau5",0.,0,1.);
   // RooRealVar cl6_lau5("cl6_lau5","cl6_lau5",0.999999999,0,1.);
-
   //cat6789
-  RooRealVar sigma_lau5("sigma_lau5","sigma_lau5",5.,3.,6.);
-  RooRealVar turnon_lau5("turnon_lau5","turnon_lau5",106.,104,107);
-  RooRealVar cl1_lau5("cl1_lau5","cl1_lau5",7.1069e-01 ,0.,1.);
-  RooRealVar cl2_lau5("cl2_lau5","cl2_lau5",4.1937e-02,0.,1.);
-  RooRealVar cl3_lau5("cl3_lau5","cl3_lau5",1.3526e-01,0,1.);
-  RooRealVar cl4_lau5("cl4_lau5","cl4_lau5",6.8827e-04,0,.1);
-  RooRealVar cl5_lau5("cl5_lau5","cl5_lau5",9.4479e-08,0,.1);
-  RooRealVar cl6_lau5("cl6_lau5","cl6_lau5",9.8845e-02,0,1.);
+  // RooRealVar sigma_lau5("sigma_lau5","sigma_lau5",5.,3.,6.);
+  // RooRealVar turnon_lau5("turnon_lau5","turnon_lau5",106.,104,107);
+  // RooRealVar cl1_lau5("cl1_lau5","cl1_lau5",7.1069e-01 ,0.,1.);
+  // RooRealVar cl2_lau5("cl2_lau5","cl2_lau5",4.1937e-02,0.,1.);
+  // RooRealVar cl3_lau5("cl3_lau5","cl3_lau5",1.3526e-01,0,1.);
+  // RooRealVar cl4_lau5("cl4_lau5","cl4_lau5",6.8827e-04,0,.1);
+  // RooRealVar cl5_lau5("cl5_lau5","cl5_lau5",9.4479e-08,0,.1);
+  // RooRealVar cl6_lau5("cl6_lau5","cl6_lau5",9.8845e-02,0,1.);
 
  RooGenericPdf step_lau1("step_lau1", "step_lau1", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5))", RooArgList(CMS_hzg_mass,turnon_lau1,cl1_lau1,cl2_lau1));//step*(ax^b)
   RooGenericPdf step_lau2("step_lau2", "step_lau2", "1e-20+(@0 > @1)*(@2*(@0)^(-4)+@3*(@0)^(-5)+@4*(@0)^(-3))", RooArgList(CMS_hzg_mass,turnon_lau2,cl1_lau2,cl2_lau2,cl3_lau2));//step*(ax^b+cx^d+fx^g) 
@@ -580,10 +578,10 @@ RooFFTConvPdf gauxlau5("gauxlau5","gauxlau5",CMS_hzg_mass,step_lau5,gau_lau5);
 
   // testing with generic exponential
   //cat1
-  // RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5,3.,10);
-  // RooRealVar turnon_exp1("turnon_exp1","turnon_exp1", 108,107,109);
-  // RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.03,-0.7,0.);
-  // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.5,0,1.);
+  // RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",6.5,5.,8);
+  // RooRealVar turnon_exp1("turnon_exp1","turnon_exp1", 107.5,107,109);
+  // RooRealVar p1_exp1("p1_exp1","p1_exp1",-4.3265e-02,-0.7,0.);
+  // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",5.1163e-01,0,1.);
   //cat2
   // RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5.0,3.,6.);
   // RooRealVar turnon_exp1("turnon_exp1","turnon_exp1",108.,105.,110);
@@ -595,15 +593,15 @@ RooFFTConvPdf gauxlau5("gauxlau5","gauxlau5",CMS_hzg_mass,step_lau5,gau_lau5);
   // RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.05,-0.5,0.);
   // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.05,0,0.1);
   //cat4
-  // RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",3.56,3.,6.);
-  // RooRealVar turnon_exp1("turnon_exp1","turnon_exp1",106.97,105.,108);
-  // RooRealVar p1_exp1("p1_exp1","p1_exp1",-4.8370e-02,-0.7,0.);
-  // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",2.9940e-01,0,1.);
+  // RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",3.56,3.,4.);
+  // RooRealVar turnon_exp1("turnon_exp1","turnon_exp1",106.97,106.,108);
+  // RooRealVar p1_exp1("p1_exp1","p1_exp1",-4e-02,-0.1,0.);
+  // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.01,0,1.);
   //cat501
-  // RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5,3.,10);
-  // RooRealVar turnon_exp1("turnon_exp1","turnon_exp1", 108,107,109);
-  // RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.03,-0.7,0.);
-  // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.5,0,1.);
+  RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5,3.,10);
+  RooRealVar turnon_exp1("turnon_exp1","turnon_exp1", 108,107,109);
+  RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.03,-0.7,0.);
+  RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.5,0,1.);
   //cat502
   // RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5,3.,10);
   // RooRealVar turnon_exp1("turnon_exp1","turnon_exp1",104.6,100,110);
@@ -615,25 +613,25 @@ RooFFTConvPdf gauxlau5("gauxlau5","gauxlau5",CMS_hzg_mass,step_lau5,gau_lau5);
   // RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.03,-0.7,0.);
   // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.5,0,1.);
   //cat6789
-  RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5.0,5.,6.);
-  RooRealVar turnon_exp1("turnon_exp1","turnon_exp1", 106.2,105,106.5);
-  RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.0228,-0.7,0.);
-  RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.023,0,1.);
+  // RooRealVar sigma_exp1("sigma_exp1","sigma_exp1",5.0,5.,6.);
+  // RooRealVar turnon_exp1("turnon_exp1","turnon_exp1", 106.3,105,106.5);
+  // RooRealVar p1_exp1("p1_exp1","p1_exp1",-0.0228,-0.7,0.);
+  // RooRealVar cp1_exp1("cp1_exp1","cp1_exp1",0.023,0,1.);
 
   //cat1
-  // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",5.,3.,10);
-  // RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",108,107,109);
-  // RooRealVar p1_exp3("p1_exp3","p1_exp3",-0.04,-0.2,0.);
-  // RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",0.3,0.,1.);
-  // RooRealVar p3_exp3("p3_exp3","p3_exp3",-0.03,-0.2,0.);
-  // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",0.1,0,1.);
+  // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",6.2293,6.,7);
+  // RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",107.83,107,109);
+  // RooRealVar p1_exp3("p1_exp3","p1_exp3",-5.0820e-02,-0.5,0.);
+  // RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",1.3882e-02,0.,1.);
+  // RooRealVar p3_exp3("p3_exp3","p3_exp3", -4.2712e-02,-0.5,0.);
+  // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",7.2016e-02,0,.5);
   //cat2
-  // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",4.9842,3.,6.);
+  // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",5.02,3.,6.);
   // RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",108.41,100,110);
-  // RooRealVar p1_exp3("p1_exp3","p1_exp3",-7.0678e-02,-0.5,0.);
-  // RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",8.0177e-01,0.,1.);
-  // RooRealVar p3_exp3("p3_exp3","p3_exp3",-4.1603e-02,-0.5,0.);
-  // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",2.6703e-02,0,1.);
+  // RooRealVar p1_exp3("p1_exp3","p1_exp3",-6.6444e-02,-0.5,0.);
+  // RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",6.7480e-01,0.,1.);
+  // RooRealVar p3_exp3("p3_exp3","p3_exp3",-4.1990e-02,-0.5,0.);
+  // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",3.1965e-02,0,.5);
   //cat3
   // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",4.,3.,5.5);
   // RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",107,105,108.);
@@ -649,19 +647,19 @@ RooFFTConvPdf gauxlau5("gauxlau5","gauxlau5",CMS_hzg_mass,step_lau5,gau_lau5);
   // RooRealVar p3_exp3("p3_exp3","p3_exp3",-6.5367e-02,-0.5,0.);
   // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",5.7985e-01,0,1.);
   //cat501
-  // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",8.104,6.,10);
-  // RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",108,107,109);
-  // RooRealVar p1_exp3("p1_exp3","p1_exp3",-4.6408e-02,-0.5,0.);
-  // RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",2.3801e-05,0.,1.);
-  // RooRealVar p3_exp3("p3_exp3","p3_exp3",-4.6408e-02,-0.5,0.);
-  // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",2.3053e-04,0,1.);
+  RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",8.104,6.,10);
+  RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",108,107,109);
+  RooRealVar p1_exp3("p1_exp3","p1_exp3",-4.6408e-02,-0.5,0.);
+  RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",2.3801e-05,0.,1.);
+  RooRealVar p3_exp3("p3_exp3","p3_exp3",-4.6408e-02,-0.5,0.);
+  RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",2.3053e-04,0,1.);
   //cat502
   // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",5.1,3.,6);
   // RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",105.6,104.6,106);
   // RooRealVar p1_exp3("p1_exp3","p1_exp3", -0.04,-0.1,0.);
-  // RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",4.5829e-01,0.000001,1.);
-  // RooRealVar p3_exp3("p3_exp3","p3_exp3",-0.0001,-1.,0.);
-  // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3", 9.2124e-01,0.0000001,1.);
+  // RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",6.3160e-03,0.000001,1.);
+  // RooRealVar p3_exp3("p3_exp3","p3_exp3",-4.2208e-02 ,-1.,0.);
+  // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3", 1.6215e-02,0.0000001,1.);
   //cat503
   // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",3.832,2.,6.);
   // RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",104.6,104,105);
@@ -670,31 +668,39 @@ RooFFTConvPdf gauxlau5("gauxlau5","gauxlau5",CMS_hzg_mass,step_lau5,gau_lau5);
   // RooRealVar p3_exp3("p3_exp3","p3_exp3",-0.024,-0.1,0.);
   // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",1.1120e-06,0,1.);
   //cat6789
-  RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",4.95,3.,8.);
-  RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",105.2,104,107);
-  RooRealVar p1_exp3("p1_exp3","p1_exp3",-3.4369e-02,-0.5,0.);
-  RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",0.42,0.,1.);
-  RooRealVar p3_exp3("p3_exp3","p3_exp3",-1.8018e-02,-0.5,0.);
-  RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",0.10,0,1.);
+  // RooRealVar sigma_exp3("sigma_exp3","sigma_exp3",4.95,3.,6.);
+  // RooRealVar turnon_exp3("turnon_exp3","turnon_exp3",106.3,104,107);
+  // RooRealVar p1_exp3("p1_exp3","p1_exp3",-4.8536e-02,-0.5,0.);
+  // RooRealVar cp1_exp3("cp1_exp3","cp1_exp3",0.43,0.,1.);
+  // RooRealVar p3_exp3("p3_exp3","p3_exp3",-1.8018e-02,-0.5,0.);
+  // RooRealVar cp3_exp3("cp3_exp3","cp3_exp3",3.7871e-02,0,1.);
   
   //cat1
-  // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.5,3.,10);
-  // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",107.8,107,108);
-  // RooRealVar p1_exp5("p1_exp5","p1_exp5",-0.15,-0.5,0.);
-  // RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",0.8,0.,1.);
-  // RooRealVar p3_exp5("p3_exp5","p3_exp5",-0.09 ,-0.5,0.);
-  // RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",0.1,0,1.);
-  // RooRealVar p5_exp5("p5_exp5","p5_exp5",-0.05,-0.5,0.);
-  // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",0.1,0,1.);
+//   RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",6.22,6,7);
+//   RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",107.8,107,108);
+//  RooRealVar p1_exp5("p1_exp5","p1_exp5",-5.0820e-02,-1.,0.);
+//   RooRealVar cp1_exp5("cp1_exp5","cp1_exp5", 4.6641e-02,0.,1.);
+//   RooRealVar p3_exp5("p3_exp5","p3_exp5",-4.2712e-02,-0.5,0.);
+//   RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",3.7630e-02,0,0.1);
+//   RooRealVar p5_exp5("p5_exp5","p5_exp5",-6.8897e-08,-0.1,0.);
+//   RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",1.0000e-05,0,.01);
+  // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",8.1943,7.,9);
+  // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",107.6,107,109);
+  // RooRealVar p1_exp5("p1_exp5","p1_exp5",-4.6807e-02,-0.5,0.);
+  // RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",1.2757e-02 ,0.,1.);
+  // RooRealVar p3_exp5("p3_exp5","p3_exp5",-1.3939e-01 ,-0.5,0.);
+  // RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",2.5680e-07,0,1.);
+  // RooRealVar p5_exp5("p5_exp5","p5_exp5",-4.6554e-02,-0.5,0.);
+  // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",2.4790e-01,0,1.);
   //cat2
-  // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.,3.,6.);
-  // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",108.21,105,109);
-  // RooRealVar p1_exp5("p1_exp5","p1_exp5",-0.07,-0.5,0.);
-  // RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",0.5,0.,1.);
-  // RooRealVar p3_exp5("p3_exp5","p3_exp5",-0.04,-0.5,0.);
-  // RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",0.0002,0,1.);
-  // RooRealVar p5_exp5("p5_exp5","p5_exp5",-0.02,-0.5,0.);
-  // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",0.002,0,1.);
+  // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.0658,4.,6.);
+  // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",108.3,107,109);
+  // RooRealVar p1_exp5("p1_exp5","p1_exp5",-5.4155e-02,-0.5,0.);
+  // RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",6.7451e-01,0.,1.);
+  // RooRealVar p3_exp5("p3_exp5","p3_exp5",-5.5821e-02,-0.5,0.);
+  // RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",4.3393e-07,0,.001);
+  // RooRealVar p5_exp5("p5_exp5","p5_exp5",-2.4270e-02,-0.5,0.);
+  // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",2.8593e-04,0,.1);
   //cat3
   // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",3.85,3.,6);
   // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",107,105,110);
@@ -714,14 +720,14 @@ RooFFTConvPdf gauxlau5("gauxlau5","gauxlau5",CMS_hzg_mass,step_lau5,gau_lau5);
   // RooRealVar p5_exp5("p5_exp5","p5_exp5",-5.1149e-05,-0.01,0.);
   // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",1.1229e-06,0,.1);
   //cat501
-  // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.5,3.,10);
-  // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",108,107,109);
-  // RooRealVar p1_exp5("p1_exp5","p1_exp5",-1.8351e-01,-0.5,0.);
-  // RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",1.5511e-08,0.,1.);
-  // RooRealVar p3_exp5("p3_exp5","p3_exp5",-1.0083e-01 ,-0.5,0.);
-  // RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",7.9829e-04,0,1.);
-  // RooRealVar p5_exp5("p5_exp5","p5_exp5",-4.6365e-02,-0.5,0.);
-  // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",1.6977e-01,0,1.);
+  RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",8.1943,7.,9);
+  RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",107.6,107,109);
+  RooRealVar p1_exp5("p1_exp5","p1_exp5",-4.6807e-02,-0.5,0.);
+  RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",1.2757e-02 ,0.,1.);
+  RooRealVar p3_exp5("p3_exp5","p3_exp5",-1.3939e-01 ,-0.5,0.);
+  RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",2.5680e-07,0,1.);
+  RooRealVar p5_exp5("p5_exp5","p5_exp5",-4.6554e-02,-0.5,0.);
+  RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",2.4790e-01,0,1.);
   //cat502
   // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.5,3.,10);
   // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",104.6,100,110);
@@ -732,23 +738,23 @@ RooFFTConvPdf gauxlau5("gauxlau5","gauxlau5",CMS_hzg_mass,step_lau5,gau_lau5);
   // RooRealVar p5_exp5("p5_exp5","p5_exp5",-0.035,-0.5,0.);
   // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",0.02,0,1.);
   //cat503
-  // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",3.8,3.,5.);
+  // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",3.8366,3.,5.);
   // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",104.6,104,105);
-  // RooRealVar p1_exp5("p1_exp5","p1_exp5",-2.1183e-01,-0.5,0.);
-  // RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",1.6941e-03,0.,1.);
-  // RooRealVar p3_exp5("p3_exp5","p3_exp5",-2.5214e-02,-0.5,0.);
-  // RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",5.5055e-04,0,1.);
-  // RooRealVar p5_exp5("p5_exp5","p5_exp5",-6.4339e-03,-0.5,0.);
-  // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",4.3189e-07,0,1.);
+  // RooRealVar p1_exp5("p1_exp5","p1_exp5",-1.5800e-01,-0.5,0.);
+  // RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",5.9251e-04,0.,1.);
+  // RooRealVar p3_exp5("p3_exp5","p3_exp5",-2.4977e-02,-0.5,0.);
+  // RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",1.6553e-03,0,1.);
+  // RooRealVar p5_exp5("p5_exp5","p5_exp5",-5.7189e-03,-0.5,0.);
+  // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",6.6356e-07 ,0,1.);
   //cat6789
-  RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",5.,3.,7.);
-  RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",106,104,106.5);
-  RooRealVar p1_exp5("p1_exp5","p1_exp5",-0.035,-0.6,0.);
-  RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",0.4,0.,1.);
-  RooRealVar p3_exp5("p3_exp5","p3_exp5",-0.02,-0.5,0.);
-  RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",0.1,0,1.);
-  RooRealVar p5_exp5("p5_exp5","p5_exp5",-0.01,-0.5,0.);
-  RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",0.002,0,1.);
+  // RooRealVar sigma_exp5("sigma_exp5","sigma_exp5",4.56,3.,6.);
+  // RooRealVar turnon_exp5("turnon_exp5","turnon_exp5",106.3,104,107);
+  // RooRealVar p1_exp5("p1_exp5","p1_exp5",-2.7150e-02,-0.6,0.);
+  // RooRealVar cp1_exp5("cp1_exp5","cp1_exp5",4.4506e-01,0.,1.);
+  // RooRealVar p3_exp5("p3_exp5","p3_exp5",-2.4988e-02,-0.5,0.);
+  // RooRealVar cp3_exp5("cp3_exp5","cp3_exp5",3.7690e-06,0,.1);
+  // RooRealVar p5_exp5("p5_exp5","p5_exp5",-7.9924e-06,-0.5,0.);
+  // RooRealVar cp5_exp5("cp5_exp5","cp5_exp5",2.1386e-03,0,.1);
   RooGenericPdf step_exp1("step_exp1", "step_exp1", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2))", RooArgList(CMS_hzg_mass,turnon_exp1,p1_exp1,cp1_exp1));//step*(ax^b)
   RooGenericPdf step_exp3("step_exp3", "step_exp3", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2)+@5*TMath::Exp(@0*@4))", RooArgList(CMS_hzg_mass,turnon_exp3,p1_exp3,cp1_exp3,p3_exp3,cp3_exp3));//step*(ax^b+cx^d)
   RooGenericPdf step_exp5("step_exp5", "step_exp5", "1e-20+(@0 > @1)*(@3*TMath::Exp(@0*@2)+@5*TMath::Exp(@0*@4)+@7*TMath::Exp(@0*@6))", RooArgList(CMS_hzg_mass,turnon_exp5,p1_exp5,cp1_exp5,p3_exp5,cp3_exp5,p5_exp5,cp5_exp5));//step*(ax^b+cx^d+fx^g)
@@ -793,6 +799,7 @@ RooFFTConvPdf gauxlau5("gauxlau5","gauxlau5",CMS_hzg_mass,step_lau5,gau_lau5);
   RooFitResult *pow5_fit;  RooFitResult *exp5_fit;  RooFitResult *lau3_fit;
   RooFitResult *lau4_fit; RooFitResult *lau5_fit;
   RooFitResult *bern1_fit; RooFitResult *bern2_fit; RooFitResult *bern3_fit; RooFitResult *bern4_fit; RooFitResult *bern5_fit;
+  CMS_hzg_mass.setBins(280);
   // RooFitResult *ggau_fit;
 	// while (stat!=0){
 	//   if (ntries>=5) break;
@@ -807,22 +814,22 @@ RooFFTConvPdf gauxlau5("gauxlau5","gauxlau5",CMS_hzg_mass,step_lau5,gau_lau5);
   // minnll=10e8;//initialize
   // while (stat!=0){
 	// //   if (ntries>=5 ) break;
-    pow1_fit = gauxpow1.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  pow3_fit = gauxpow3.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  pow5_fit = gauxpow5.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  exp1_fit = gauxexp1.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  exp3_fit = gauxexp3.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  exp5_fit = gauxexp5.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  lau1_fit = gauxlau1.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  lau2_fit = gauxlau2.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  lau3_fit = gauxlau3.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  lau4_fit = gauxlau4.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  lau5_fit = gauxlau5.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+    pow1_fit = gauxpow1.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  pow3_fit = gauxpow3.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  pow5_fit = gauxpow5.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  exp1_fit = gauxexp1.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  exp3_fit = gauxexp3.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  exp5_fit = gauxexp5.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  lau1_fit = gauxlau1.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  lau2_fit = gauxlau2.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  lau3_fit = gauxlau3.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  lau4_fit = gauxlau4.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  lau5_fit = gauxlau5.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
 	  // // // // // // bern1_fit = bern1.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  bern2_fit = bern2.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE),RooFit::PrintLevel(1)); //FIXME
-	  bern3_fit = bern3.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  bern4_fit = bern4.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
-	  bern5_fit = bern5.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  bern2_fit = bern2.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE),RooFit::PrintLevel(1)); //FIXME
+	  bern3_fit = bern3.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  bern4_fit = bern4.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
+	  bern5_fit = bern5.fitTo(datahist,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE)); //FIXME
     // ggau_fit = ggau.fitTo(data,RooFit::Save(1),RooFit::Minimizer("Minuit2","minimize"),RooFit::SumW2Error(kTRUE));
 
   storedPdfs.add(gauxexp1);
