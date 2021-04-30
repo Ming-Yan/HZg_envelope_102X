@@ -135,7 +135,8 @@ int getBestFitFunction(RooMultiPdf *bkg, RooDataSet *data, RooCategory *cat, boo
 
 void getprob(int cat)
 {
-  TFile *f = TFile::Open(Form("newturnon_cat%d.root",cat));
+  TFile *f = TFile::Open(Form("m105_170_turnon_cat%d_new.root",cat));
+  //TFile *f = TFile::Open("m105_170_turnon_cat1.root");
   RooWorkspace *w = (RooWorkspace*)f->Get("multipdf");
     string catname[15] = 
       {
@@ -149,7 +150,6 @@ void getprob(int cat)
     // CMS_hzg_mass.setBins(320);
     RooPlot* xframe1  = CMS_hzg_mass->frame() ;
     //RooDataSet *data = (RooDataSet*)w->data(Form("data_obs_ele_mu_cat%d_2020",cat));
-    
     //RooMultiPdf *pdf = (RooMultiPdf*)w->pdf("CMS_hzg_bkgshape");
     //cout<<"Get best fit functions"<<endl;
      //int bestfit = 0;
@@ -157,9 +157,11 @@ void getprob(int cat)
     //cout<<catname[bestfit]<<endl;
     for(int i = 0 ; i < 15; i++)
       {
-        RooFitResult *result = (RooFitResult*)f->Get(Form("fitresult_%s_datahist_ele_mu_cat%d_2020",catname[i].c_str(),cat));
+        RooFitResult *result = (RooFitResult*)f->Get(Form("fitresult_%s_env_pdf_ele_mu_cat%d_2020_13TeV_CMS_hzg_datahist_ele_mu_cat%d_2020_13TeV",catname[i].c_str(),cat,cat));
         double prevNLL,thisNLL,chi2,prob;
         int order,prevorder;
+	//cout<<"NLL: "<<catname[i].c_str()<<" "<<result->minNll()<<endl;;
+	//result->Print();
         if(i<3){
           order = i*2+1;
           thisNLL = result->minNll();
@@ -194,7 +196,7 @@ void getprob(int cat)
             prob = TMath::Prob(chi2,order-prevorder);
             cout<<catname[i]<<" "<<prob<<endl;
           }
-          if(i<8){prevNLL = thisNLL; prevorder=order;}        
+          if(i<10){prevNLL = thisNLL; prevorder=order;}        
           }//Laurent
         else {
           order=i-9;
