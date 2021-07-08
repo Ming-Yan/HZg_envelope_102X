@@ -34,9 +34,9 @@ def get_options():
   parser.add_option("--parameterMap", dest="parameterMap", default=None, help="Comma separated pairs of model parameters:values,...")
   parser.add_option("--ext", dest="ext", default='', help="Extension for saving")
   parser.add_option("--mass", dest="mass", default=None, help="Higgs mass")
-  parser.add_option("--xvar", dest="xvar", default="CMS_hgg_mass,m_{#gamma#gamma},GeV", help="X-variable: name,title,units")
-  parser.add_option("--nBins", dest="nBins", default=80, type='int', help="Number of bins")
-  parser.add_option("--pdfNBins", dest="pdfNBins", default=3200, type='int', help="Number of bins")
+  parser.add_option("--xvar", dest="xvar", default="CMS_hzg_mass,m_{l^{+}l^{-}#gamma},GeV", help="X-variable: name,title,units")
+  parser.add_option("--nBins", dest="nBins", default=55, type='int', help="Number of bins")
+  parser.add_option("--pdfNBins", dest="pdfNBins", default=220, type='int', help="Number of bins")
   parser.add_option("--translateCats", dest="translateCats", default=None, help="JSON to store cat translations")
   parser.add_option("--translatePOIs", dest="translatePOIs", default=None, help="JSON to store poi translations")
   parser.add_option("--muhatu",dest="muhatu",default=None, help="muhat up")
@@ -56,7 +56,7 @@ def Translate(name, ndict):
 translateCats = {} if opt.translateCats is None else LoadTranslations(opt.translateCats)
 translatePOIs = {} if opt.translatePOIs is None else LoadTranslations(opt.translatePOIs)
 
-blindingRegion = [116.,134.]
+blindingRegion = [120.,130.]
   
 # Open WS
 if opt.inputWSFile is not None:
@@ -351,6 +351,6 @@ for c in h_data:
   lat1.SetNDC(1)
   lat1.SetTextSize(0.045*padSizeRatio)
   lat1.DrawLatex(0.9,0.93,"B component subtracted")
-  canv.Print("%s.pdf"%c)
+  canv.Print("%s_newturnon.root"%c)
     
   

@@ -3,7 +3,7 @@ read -p "cat: " cat
 read -p "postfit signal strength: " postr
 ulimit -s unlimited
 set -e
-cd /afs/cern.ch/user/m/milee/CMSSW_10_2_13/src/flashggFinalFit/Plots/SplusBModels1/toys
+cd /afs/cern.ch/user/m/milee/CMSSW_10_2_13/src/flashggFinalFit/Plots/SplusBModels${cat}/toys
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 export SCRAM_ARCH=slc7_amd64_gcc700 
 eval `scramv1 runtime -sh`

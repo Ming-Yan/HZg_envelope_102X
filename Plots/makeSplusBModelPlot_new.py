@@ -28,7 +28,7 @@ def get_options():
   parser.add_option("--inputWSFile", dest="inputWSFile", default=None, help="Input RooWorkspace file. If loading snapshot then use a post-fit workspace where the option --saveWorkspace was set")
   parser.add_option("--loadSnapshot", dest="loadSnapshot", default=None, help="Load best-fit snapshot name")
   parser.add_option("--cats", dest="cats", default=None, help="Analysis categories. all = loop over cats and plot sum")
-  parser.add_option("--unblind", dest="unblind", default=True, action="store_true", help="Unblind signal region")
+  parser.add_option("--unblind", dest="unblind", default=False, action="store_true", help="Unblind signal region")
   parser.add_option("--blindingRegion", dest="blindingRegion", default="120,130", help="Region in xvar to blind")
   parser.add_option("--dataScaler", dest="dataScaler", default=1., type='float', help="Scaling term for data histogram")
   parser.add_option("--doBkgRenormalization", dest="doBkgRenormalization", default=False, action="store_true", help="Do Bkg renormalization")
@@ -46,8 +46,8 @@ def get_options():
   parser.add_option("--ext", dest="ext", default='', help="Extension for saving")
   parser.add_option("--mass", dest="mass", default=None, help="Higgs mass")
   parser.add_option("--xvar", dest="xvar", default="CMS_hzg_mass,m_{l^{+}l^{-}#gamma},GeV", help="X-variable: name,title,units")
-  parser.add_option("--nBins", dest="nBins", default=55, type='int', help="Number of bins")
-  parser.add_option("--pdfNBins", dest="pdfNBins", default=2200, type='int', help="Number of bins")
+  parser.add_option("--nBins", dest="nBins", default=65, type='int', help="Number of bins")
+  parser.add_option("--pdfNBins", dest="pdfNBins", default=260, type='int', help="Number of bins")
   parser.add_option("--translateCats", dest="translateCats", default=None, help="JSON to store cat translations")
   parser.add_option("--translatePOIs", dest="translatePOIs", default=None, help="JSON to store poi translations")
   parser.add_option("--problematicCats", dest="problematicCats", default='', help='Problematic analysis categories to skip when processing all')
@@ -77,6 +77,7 @@ blindingRegion = [float(opt.blindingRegion.split(",")[0]),float(opt.blindingRegi
 # Define xvariable and categories
 if opt.mass is not None: w.var("MH").setVal(float(opt.mass))
 xvar = w.var(opt.xvar.split(",")[0]) 
+#xvar.setBins(70)
 weight = ROOT.RooRealVar("weight","weight",0)
 xvar.SetTitle(opt.xvar.split(",")[1])
 xvar.setPlotLabel(opt.xvar.split(",")[1])
@@ -303,9 +304,10 @@ for cidx in range(len(cats)):
     for ibin in range(1,h_data.GetNbinsX()+1):
       bcenter = h_data.GetBinCenter(ibin)
       # Skip blinded region
-      if( not opt.unblind )&(bcenter > blindingRegion[0])&(bcenter < blindingRegion[1]): continue 
+      if( not opt.unblind )&(bcenter >= blindingRegion[0])&(bcenter <= blindingRegion[1]): continue 
       if h_data.GetBinContent(ibin)==0.: 
         h_data.SetBinError(ibin,1)
+        h_data.SetBinContent(ibin,0)
         if opt.doCatWeights: h_wdata.SetBinError(ibin,catsWeights[c])
 
   # Extract pdfs for category and create histograms
